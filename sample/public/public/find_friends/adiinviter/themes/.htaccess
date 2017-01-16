@@ -1,4 +1,0 @@
-<Files ~ "\.php|\.js|\.css$">
-  Order allow,deny
-  Deny from all
-</Files>
