@@ -1,0 +1,20 @@
+ <!-- Logout Notification Box -->
+<div id="logout">
+    <div class="logout-message">
+        <h3>
+            <i class="fa fa-sign-out text-red"></i> Ready to go?
+        </h3>
+        <p>Select "Logout" below if you are ready<br> to end your current session.</p>
+        <ul class="list-inline">
+            <li>
+                <a href="<?php echo $this->url('login', array('action' => 'logout', 'controller' => 'index'));?>" class="btn btn-gray">
+                    <strong>Logout</strong>
+                </a>
+            </li>
+            <li>
+                <button class="logout_close btn btn-red">Cancel</button>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- /#logout -->

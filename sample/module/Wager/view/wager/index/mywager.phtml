@@ -1,0 +1,152 @@
+<?php echo $this->partial('wager/partials/topmenu.phtml');?>
+<?php echo $this->partial('wager/partials/sidemenu.phtml');?>
+<?php echo $this->partial('wager/partials/talkwall.phtml');?>
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/backoffice/index.css');?>
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/wager/mywager.css');?>
+ 
+
+
+
+<!-- begin MAIN PAGE CONTENT -->
+<div id="page-wrapper">
+
+    <div class="page-content col-xs-12 col-sm-9 col-md-9">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-title">
+                    <h1>Pending Wagers
+                    <small>View all your pending Wagers</small>
+                    </h1>
+                   <!--  <ol class="breadcrumb">
+                        <li><i class="fa fa-desktop"></i> <a href="<?php echo $this->url('wager', array('action'=>'index', 'controller' => 'index'))?>">The Wager Wall</a></i>
+                    </ol> -->
+                </div>
+            </div>
+        </div>
+        <div class="pageView" style="display:none;">pendingWagersView</div>
+         <div class="row col-xs-12 col-sm-12 col-md-12">
+            <ul class="nav nav-pills pendingWagersNavPills"> 
+              <li id = "mywager-All" class="activePill">All</li> 
+              <li id = "mywager-Received">Received</li> 
+              <li id = "mywager-Sent" >Sent</li> 
+            </ul>
+        </div>
+        <div class="row wager_wall_font_correct">
+            <div class="col-lg-12 padWagerTable">
+                <div id = "pageOn" style="display:none;">mywager</div>
+                <ul id = "wagerList" class="list-group scrollFeature pendingWagersList">
+                  <?php foreach($this->myWagers as $wager):?>
+                   <li class="list-group-item" id="listEvtMatch<?php echo $wager['id'];?>" ur="<?php echo $wager['userAskId'];?>"  wagerid="<?php echo $wager['id'];?>">
+                       <div> 
+                            <div><h3><?php echo $wager['consoleName'] . ' - ' . $wager['gameName'] . ' - $'. $wager['riskAmount'];?></h3></div>
+                            <div id = "wagerMatchId-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['wagerId'];?></div>
+                                <div id = "wagerid" style="display:none;"><?php echo $wager['id'];?></div>
+                                <div id = "shown-wagerid-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['wagerId'];?></div>
+                                <div id = "wager-consoleusername-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['consoleUsername'];?></div>
+                                <div id = "wager-askrules-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['askRules'];?></div>
+                                <div id = "wager-whichconsole-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['whichConsole'];?></div>
+                                <div id = "wager-riskamount-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['riskAmount'];?></div>
+                                <div id = "wager-gametobeplayed-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['gameName'];?></div>
+                                <div id = "wager-status-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['status'];?></div>
+                                <div id = "wager-typeId-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['typeId'];?></div>
+                                <div id = "wager-acceptor-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['consoleUsernameAccept'];?></div>      
+                                <div id = "wager-askresult-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['askResult'];?></div>  
+                                <div id = "wager-acceptresult-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['acceptResult'];?></div>  
+                                <div id = "wager-created-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['created'];?></div>                                   
+                                <div id = "wager-gamestarttime-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['gameStartTime'];?></div>  
+                                <div id = "wager-gameresulttime-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['gameResultTime'];?></div>                                 
+                                
+                            <?php if($wager['typeId'] != 1):?>
+                                <?php if($this->userId == $wager['userAskId']):?>
+                                     <div><small>You have made a Wager</small></div>
+                                     <div><small><?php echo 'Opponent: ' . $wager['acceptusername'] ;?></small></div>
+                                     <div id = "wager-opponentname-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['acceptusername'];?></div>
+                                <?php else:?>
+                                     <div><small>You have received a Wager</small></div>
+                                     <div><small><?php echo 'Opponent: ' . $wager['askusername'] ;?></small></div>
+                                     <div id = "wager-opponentname-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['askusername'];?></div>
+                                <?php endif;?>
+                            <?php else:?>
+                                <div><small> You have made an Open Wager</small></div>                                     
+                            <?php endif;?>     
+                        </div>
+                        <div class="individualWager" id="buttEvtMatchResult<?php echo $wager['id'];?>">   
+                                <div role="group" aria-label="..."> 
+                                <?php if($wager['status'] == 1):?>
+                                <?php if($this->userId == $wager['userAskId']):?>
+                                    <!-- Pending Button added by Ari -->
+                                    <a id = "pendingmatch" type="button" value2 = "<?php echo $wager['id'];?>" class="btn btn-default" disabled="disabled">Pending</a>   
+                                    <!-- End Ari's pending button  -->
+                                    <a id = "cancelmatch" type="button" value1 = "<?php echo 'cancelwager';?>" value2 = "<?php echo $wager['id'];?>" class="btn btn-danger cancelWager_open" href="#cancelWager">Cancel</a>
+                                    
+                                <?php else:?>
+                                    <a id = "acceptmatch" type="button" value1 = "acceptwager" value2 = "<?php echo $wager['id'];?>" class="btn btn-success  acceptWager_open" href="#acceptWager">Wager Details</a>
+                                    <a id = "declinematch" type="button" value1 = "declinewager" value2 = "<?php echo $wager['id'];?>" class="btn btn-danger declineWager_open" href="#declineWager">Decline</a>
+                                <?php endif;?>
+                            
+                                </div>
+                            <?php endif;?>
+                            <?php if($wager['status'] == 2 && $wager['status'] != 7 ):?> 
+                                <a id="viewWagerDetailsBtn" type="button" value = "<?php echo $wager['consoleName'] . ' - ' . $wager['gameName'] . ' - $'. $wager['riskAmount'];?>" value1 = "<?php echo $wager['id'];?>" class="btn btn-success">View Details</a>
+                                <?php if($this->userId == $wager['userAskId']):?>    
+                                    <?php if($wager['status'] == 2 && !$wager['askResult']):?>
+                                        <a id="reportmatch" type="button" value = "<?php echo $wager['consoleName'] . ' - ' . $wager['gameName'] . ' - $'. $wager['riskAmount'];?>" value1 = "<?php echo $wager['id'];?>" 
+                                       class="btn btn-success  reportMatch_open" href="#reportMatch">Report Wager Result</a>
+                                    <?php else:?>
+                                        <a id = "pendingmatchresult" type="button" value2 = "<?php echo $wager['id'];?>" class="btn btn-default" disabled="disabled">Waiting Opponent Result</a>
+                                    <?php endif;?>
+
+                                <?php else:?>    
+                                    <?php if($wager['status'] == 2 && !$wager['acceptResult']):?>
+                                        <a id="reportmatch" type="button" value = "<?php echo $wager['consoleName'] . ' - ' . $wager['gameName'] . ' - $'. $wager['riskAmount'];?>" value1 = "<?php echo $wager['id'];?>" 
+                                       class="btn btn-success  reportMatch_open" href="#reportMatch">Report Wager Result</a>
+                                    <?php else:?>
+                                        <a id = "pendingmatchresult<?php echo $wager['id'];?>" type="button" value2 = "<?php echo $wager['id'];?>" class="btn btn-default" disabled="disabled">Waiting Opponent Result</a>
+                                    <?php endif;?>
+                                <?php endif;?>
+                            <?php endif;?>
+                            <?php if($wager['status'] == 7 || ($this->userId == $wager['userAskId'] && $wager['askResult'] == 3)
+                                    || ($this->userId == $wager['userAcceptId'] && $wager['acceptResult'] == 3)):?>  
+                                  <?php
+                                    
+                                        $dispute = $this->theDispute->getTheDisputeWagerId($wager['id']);
+                                  
+                                  ?>
+                                  <div id = "dispute-id-<?php echo $wager['id'];?>" style="display:none;"><?php echo $dispute->id;?></div>
+                                  <div id = "disputeid-<?php echo $wager['id'];?>" style="display:none;"><?php echo $dispute->disputeId;?></div>
+                                  <div id = "linkurl-<?php echo $wager['id'];?>" style="display:none;"><?php echo $dispute->linkUrl;?></div>
+                                  <div id = "disputedetails-<?php echo $wager['id'];?>" style="display:none;"><?php echo $dispute->disputeDetails;?></div>
+                                  
+
+                                  <div id = "dispute-askresult-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['askResult'];?></div>
+                                  <div id = "dispute-useraskid-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['userAskId'];?></div>
+                                  
+                                  <div id = "dispute-acceptresult-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['acceptResult'];?></div>
+                                  <div id = "dispute-useracceptid-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['userAcceptId'];?></div>
+                                  
+                                  <!--<a id = "pendingdispute<?php //echo $wager['id'];?>" type="button" value2 = "<?php //echo $wager['id'];?>" class="btn btn-default" disabled="disabled">Dispute Details</a>-->
+                                
+                                  <a id = "pendingdispute" value="<?php echo $wager['id'];?>" type="button" class="btn btn-success  disputeWager_open" href="#disputeWager">Dispute Details</a>
+                            <?php endif;?>
+                        </div>                     
+                  </li>
+                  <?php endforeach;?>
+                </ul>
+            </div>
+          <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- /.page-content -->
+
+</div>
+
+<?php echo $this->partial('wager/partials/wager.phtml',  array('newwager' => $newwager,'matchresult'=>$matchresult))?>
+<script>
+//$(document).ready(function(){
+  //  $('#exit_wager').click(function(){
+    //  $('#postWager').popup("hide");
+   // });
+ // });
+</script>
+<!-- /#page-wrapper -->
+<!-- end MAIN PAGE CONTENT -->

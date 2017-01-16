@@ -1,0 +1,85 @@
+<?php echo $this->partial('wager/partials/topmenu.phtml');?>
+<?php echo $this->partial('wager/partials/sidemenu.phtml');?>
+<?php echo $this->partial('wager/partials/talkwall.phtml');?>
+
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/backoffice/index.css');?>
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/wager/mywager.css');?>
+ 
+
+<?php echo $this->partial('wager/partials/wager.phtml',  array('newwager' => $newwager,'matchresult'=>$matchresult))?>
+<?php echo $this->partial('wager/message/partials/msgpopup.phtml',  array('message' => $message))?>
+<!-- begin MAIN PAGE CONTENT -->
+<div id="page-wrapper">
+	<div class="col-xs-12 col-sm-9 col-md-9 legalInformationContainer legalInformationScroll">
+	   <h1><small>The GamerWall LLC Privacy Statement</small></h1>
+	     <p>
+	     Your privacy is important to The GamerWall LLC.  This privacy statement provides information about the personal information that The GamerWall LLC collects, and the ways in which The GamerWall LLC uses that personal information.
+	     </p>
+	     <h3>Personal information collection</h3>
+	     <p>
+	     The GamerWall LLC may collect and use the following kinds of personal information: 
+	     </p>
+	     <ul>
+	         <li>information about your use of this website </li>
+	         <li>information that you provide using for the purpose of registering with the website (including but not limited to your full legal name, e-mail address, birth date, gender, zip code, occupation, industry, and personal interests.</li>
+	         <li>information about transactions carried out over this website </li>
+	         <li>information that you provide for the purpose of subscribing to the website services </li>
+	         <li>any other information that you send to The GamerWall LLC</li>
+	       </ul>
+	     <h3>Using personal information</h3>
+	     <p>
+	     Using personal information 
+	     </p>
+	     <ul>
+	         <li>administer this website</li>
+	         <li>personalize the website for you</li>
+	         <li>enable your access to and use of the website services</li>
+	         <li>publish information about you on the website</li>
+	         <li>send to you products that you purchase</li>
+	         <li>supply to you services that you purchase</li>
+	         <li>send to you statements and invoices</li>
+	         <li>collect payments from you</li>
+	         <li>send you marketing communications</li>
+	       </ul>
+	     <p>
+	   Where The GamerWall LLC discloses your personal information to its agents or sub-contractors for these purposes, the agent or sub-contractor in question will be obligated to use that personal information in accordance with the terms of this privacy statement. 
+
+	   In addition to the disclosures reasonably necessary for the purposes identified elsewhere above, The GamerWall LLC may disclose your personal information to the extent that it is required to do so by law, in connection with any legal proceedings or prospective legal proceedings, and in order to establish, exercise or defend its legal rights.
+	   </p>
+	       <h3>Securing your data</h3>
+	       <p>
+	     The GamerWall LLC will take reasonable technical and organizational precautions to prevent the loss, misuse or alteration of your personal information. 
+
+	     The GamerWall LLC will store all the personal information you provide on its secure servers. 
+
+	     Information relating to electronic transactions entered into via this website will be protected by encryption technology. 
+	       </p>
+	       <h3>Cross-border data transfers</h3>
+	       <p>
+	       Information that The GamerWall LLC collects may be stored and processed in and transferred between any of the countries in which The GamerWall LLC operates to enable the use of the information in accordance with this privacy policy.
+
+	       In addition, personal information that you submit for publication on the website will be published on the internet and may be available around the world.
+
+	       You agree to such cross-border transfers of personal information.
+	       </p>
+	       <h3>Updating this statement</h3>
+	       <p>
+	       The GamerWall LLC may update this privacy policy by posting a new version on this website.  
+
+	       You should check this page occasionally to ensure you are familiar with any changes.
+	       </p>
+	       <h3>Other websites</h3>
+	       <p>
+	       This website is provided “as is” without any representations or warranties, express or implied.  The GamerWall LLC makes no representations or warranties in relation to this website or the information and materials provided on this website.  
+	   </p>
+	       <h3>Contact The GamerWall LLC</h3>
+	       <p>
+	       If you have any questions about this privacy policy or The GamerWall LLC’s treatment of your personal information, please write by email to support@thewagerwall.com
+	       </p>
+	   	
+   	</div>
+    <!-- /.page-content -->
+</div>
+<!-- /#page-wrapper -->
+<!-- end MAIN PAGE CONTENT -->
+

@@ -1,0 +1,161 @@
+<?php echo $this->partial('wager/partials/topmenu.phtml');?>
+<?php echo $this->partial('wager/partials/sidemenu.phtml');?>
+<?php echo $this->partial('wager/partials/talkwall.phtml');?>
+
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/backoffice/index.css');?>
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/wager/mywager.css');?>
+ 
+
+<?php echo $this->partial('wager/partials/wager.phtml',  array('newwager' => $newwager,'matchresult'=>$matchresult))?>
+<?php echo $this->partial('wager/message/partials/msgpopup.phtml',  array('message' => $message))?>
+<!-- begin MAIN PAGE CONTENT -->
+<div id="page-wrapper">
+	<div class="col-xs-12 col-sm-9 col-md-9 legalInformationContainer legalInformationScroll">
+	   <h1><small>The GamerWall LLC Rules</small></h1>
+	   
+	   <h3>Reporting Results and Cancelations</h3>
+	   <p>
+	   After a player has reported a wager result, the other player will have 1 hour to verify or dispute the
+
+	   wager. If the result is not verified or disputed, the system will automatically grade the wager based
+
+	   on the initial wager report. If no match result is received within 2 hours, the wager will be
+
+	   considered null and void, and both players will be refunded. 
+	   </p>
+	   
+	   <h3>General Site Rules</h3>
+	   <p>
+	   Rules apply to all matches unless agreed upon by both players
+
+	   Any rules not stated in the “Pre-Wager Rules” will not be considered in the event of a dispute.
+
+	   “Glitches” used in gameplay could lead to an unfavorable decision in the event of a dispute.
+
+	   Custom Rosters and Custom Players are not allowed unless specifically states in the “Pre-Wager
+
+	   Rules”
+
+	   Guest play is not allowed unless otherwise specified in the “Pre-Wager Rules” or in communication
+
+	   with opponent via GamerWall messaging.
+
+	   If lag is present during gameplay the game must be exited at the start of the game or at a point in the
+
+	   game where neither player has a clear advantage. If you continue to play with lag, it will not be
+
+	   considered in any dispute. Intentional lagging will be considered cheating.
+
+	   Any point spreads must be mutually agreed to via GamerWall messaging or in the “Pre-Wager Rules”.
+
+	   If both players do not agree, and a dispute is made, the wager will be considered a tie and both
+
+	   players will be refunded their money less the GamerWall Fee.
+	   </p>
+	    <h3>Disputes</h3>
+	    <p>
+	   After a match is completed and one player has verified the match outcome, the other player will have
+
+	   the option to dispute the outcome. For any dispute to be considered, VIDEO EVIDENCE must be
+
+	   submitted. If a game is continued after a Rule or Settings violation, the dispute will not be
+
+	   considered. If you wait until your opponent has an advantage before exiting the game, your dispute
+
+	   will not be considered.
+
+	   There are no automatic victories on The GamerWall. You cannot win a wager that has not been
+
+	   played. If you intentionally exit a match while losing or the game is tied and you cannot show
+
+	   evidence of wrongdoing by the other player, you will lose the wager.
+
+	   We take honesty and integrity very seriously at The GamerWall, if your account is consisntely
+
+	   appearing in disputes or complaints, we will take action up to fining and/or suspending your
+
+	   account. Providing false information whether in game or in dispute in order to gain an advantage
+
+	   will be enforced by the full extent of the law.
+	    </p>
+	    <h3>Cheating</h3>
+	    <p>
+	    If a rule or setting has been broken and the match is deemed close (1 score, 1 run, 1 goal, tied,
+
+	    etc)and as long as the game is exited immediately, the offending player will concede the wager. If the
+
+	    match is played past the point of the violation then the match will be considered a draw and players
+
+	    will be refunded their money less GamerWall’s fee.
+	    </p>
+	    <h3>Decisions</h3>
+	    <p>
+	    All rulings by GamerWall are considered final and binding. We take cheating seriously and will have
+
+	    a very low tolerance for such behavior. If you do not consent to The GamerWall’s decision authority,
+
+	    do NOT wager.
+	    </p>
+	    <h3>Disconnections</h3>
+	    <p>
+	    In the event of a disconnection, it is incumbent on the players to start a new game, add the score and
+
+	    time from the disconnected game, and finish the game. If you continue to play past the point of the
+
+	    disconnected game, the final score will be considered valid. All point spreads will be considered with
+
+	    the disconnected game.
+
+	    If you get disconnected and start a new game and there is an issue with where the last game left off
+
+	    (points, time, yardline, etc) the game must be exited immediately. You must provide evidence to The
+
+	    GamerWall and we will make a decision based on that evidence.
+
+	    Disconnections are frequently used to gain an advantage, we consider this in the same light as
+
+	    cheating. If a player does not make a good faith effort to continue a disconnected game and he was at
+
+	    a disadvantage, he MAY forfeit the match.
+
+	    Likewise, excessive grieving can be used frequently as an advantage. If you are found to be
+
+	    excessively grieving it can result in an unfavorable decision in regards to disputes.
+	    </p>
+	    <h3>Basic Game Rules</h3>
+	    <p>
+	    Unless otherwise states in “Pre-Wager Rules” the following will be enforced for games:
+	    </p>
+	    <p>Madden</p>
+	    <ul>
+	      <li>Any blocked FGs or PATs will be added to the final score</li>
+	      <li>No blocking punts</li>
+	      <li>No fake punts or field goals (rule void if attempted and failed)</li>
+	      <li>No onside kicks except in situations deemed reasonable by The GamerWall</li>
+	      <li>Pausing the game to gain an advantage is strictly prohibited</li>
+	      <li>Fatigue is on</li>
+	      <li>Even Teams Off</li>
+	      <li>Chew Clock is Legal</li>
+	      <li>No custom playbooks</li>
+	      <li>NO NANO BLITZES!</li>
+	    </ul>
+	    <p>NBA2k</p>
+	    <ul>
+	      <li>Efforts to draw fouls using un-reasonable pump fakes will be considered a rules violation.</li>
+	      <li>If you pause timer runs out when you are tied or losing, you will concede the wager.
+
+	    Exceptions to this rule can occur when the pause timer runs out while a player is attempting
+
+	    to gather evidence (that evidence must be submitted and valid).</li>
+	    </ul>
+	    <p>FIFA</p>
+	    <ul>
+	      <li>If the game is a draw, a new game must be started and played.</li>
+	    </ul>
+	   	
+   	</div>
+    <!-- /.page-content -->
+</div>
+<!-- /#page-wrapper -->
+<!-- end MAIN PAGE CONTENT -->
+

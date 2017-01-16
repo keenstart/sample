@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'receipt';
+    src: url('../../fonts/fakerece.eot');
+    src: url('../../fonts/fakerece.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/fakerece.woff') format('woff'),
+         url('../../fonts/fakerece.ttf') format('truetype'),
+         url('../../fonts/fakerece.svg#fake_receiptregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

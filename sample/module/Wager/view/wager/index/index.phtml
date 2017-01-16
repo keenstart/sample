@@ -1,0 +1,94 @@
+<?php echo $this->partial('wager/partials/topmenu.phtml');?>
+<?php echo $this->partial('wager/partials/sidemenu.phtml');?>
+<?php echo $this->partial('wager/partials/talkwall.phtml', array('theChannels' => $theChannels));?>
+
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/backoffice/index.css');?>
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/wager/mywager.css');?>
+ 
+
+
+
+<!-- begin MAIN PAGE CONTENT -->
+<div id="page-wrapper">
+
+    <div class="page-content col-xs-12 col-sm-9 col-md-9">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-title">
+                    <h1>The Gamer Wall
+                    <small>View all open Wagers to pick from:</small>
+                    </h1>
+                   <!--  <ol class="breadcrumb">
+                        <li><i class="fa fa-desktop"></i> <a href="<?php echo $this->url('wager', array('action'=>'index', 'controller' => 'index'))?>">The Wager Wall</a></i>
+                    </ol> -->
+                </div>
+            </div>
+        </div>
+        <div class="pageView" style="display:none;">theWagerWallView</div>
+        <div class="row">
+            <div class="col-xs-5 col-sm-3">
+                <select id="console-id"  class="form-control" onchange="getGameConsole('#console-id')">
+                  <?php foreach($this->consoles as $console):?>
+                        <option value=<?php echo $console->id;?>><?php echo $console->consoleName;?></option>
+                  <?php endforeach;?>
+                </select>
+            </div>
+             <div class="col-xs-5 col-sm-3">
+                <select id="games-id"  class="form-control" onchange="openWagerFilter($('#console-id').val(), $('#games-id').val())" >
+                  <?php foreach($this->games as $game):?>
+                        <option value=<?php echo $game->id;?>><?php echo $game->gameName;?></option>
+                  <?php endforeach;?>
+                </select>
+            </div> 
+        </div>
+        <div class="row wager_wall_font_correct">
+            <div class="col-lg-12 padWagerTable">
+                <div id = "pageOn" style="display:none;">openwager</div>
+                <ul id = "wagerList" class="list-group scrollFeature">
+                  <?php foreach($this->myWagers as $wager):?>
+                   <li class="list-group-item" id="listEvtMatch<?php echo $wager['id'];?>" ur="<?php echo $wager['userAskId'];?>" wagerid="<?php echo $wager['id'];?>">
+                       <div> 
+                            <div><h3><?php echo $wager['consoleName'] . ' - ' . $wager['gameName'] . ' - $'. $wager['riskAmount'];?></h3></div>
+                          
+                            <div><?php echo 'User: ' . $wager['askusername'] ;?><small> have made an Open Wager</small></div>
+                                <div id = "wagerid" style="display:none;"><?php echo $wager['id'];?></div>
+                                <div id = "shown-wagerid" style="display:none;"><?php echo $wager['wagerId'];?></div>
+                                <div id="wager-matchid-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['wagerId'];?></div>
+                                <div id = "wager-consoleusername-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['consoleUsername'];?></div>
+                                <div id = "wager-riskamount-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['riskAmount'];?></div>
+                                <div id = "wager-gametobeplayed-<?php echo $wager['id'];?>" style="display:none;"><?php echo  $wager['gameName'];?></div>
+                                <div id = "wager-opponentname-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['askusername'];?></div>
+                                <div id = "wager-askrules-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['askRules'];?></div>
+                                <div id = "wager-whichconsole-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['whichConsole'];?></div>
+                                <div id = "wager-status-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['status'];?></div>
+                                <div id = "wager-typeId-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['typeId'];?></div>  
+                                <div id = "wager-created-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['created'];?></div> 
+                                <div id = "wager-gamestarttime-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['gameStartTime'];?></div>  
+                                <div id = "wager-gameresulttime-<?php echo $wager['id'];?>" style="display:none;"><?php echo $wager['gameResultTime'];?></div>                                
+                        </div>
+                        <div class="individualWager" id="buttEvtMatchResult<?php echo $wager['id'];?>">   
+                            <div role="group" aria-label="..."> 
+                            <?php if($wager['status'] == 1):?>
+                            <?php if($this->userId == $wager['userAskId']):?>
+                                <a id = "pendingmatch" type="button"  value2 = "<?php echo $wager['id'];?>" class='btn btn-default' disabled='disabled'>Pending</a>                                     
+                                <a id = "cancelmatch" type="button" value1 = "<?php echo 'cancelwager';?>" value2 = "<?php echo $wager['id'];?>" class="btn btn-danger cancelWager_open" href="#cancelWager">Cancel</a>                               
+                            <?php else:?>
+                                <a id = "acceptmatch" type="button" value1 = "acceptwager" value2 = "<?php echo $wager['id'];?>" class="btn btn-success  acceptWager_open" href="#acceptWager">Wager Details</a>
+                            <?php endif;?>
+
+                            </div>
+                            <?php endif;?>
+                        </div>                     
+                  </li>
+                  <?php endforeach;?>
+                </ul>
+            </div>
+          <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- /.page-content -->
+
+</div>
+<?php echo $this->partial('wager/partials/wager.phtml',  array('newwager' => $newwager,'matchresult'=>$matchresult))?>
+<!-- /#page-wrapper -->
+<!-- end MAIN PAGE CONTENT -->

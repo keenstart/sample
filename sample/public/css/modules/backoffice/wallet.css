@@ -1,0 +1,38 @@
+.add_btc_btn{
+  margin: 5px 10px;
+  padding: 6px 20px !important;
+  height: auto !important;
+  font-family: 'rbn02alt',sans-serif;
+  text-transform: uppercase;
+}
+
+.add_btc_btn{
+  background-color: #FFF;
+  color: #407abe !important;
+  border: thin solid #3D5BD5;
+}
+
+.add_btc_btn:hover, .add_btc_btn:active, .add_btc_btn:visited, .add_btc_btn:link{
+  background-color: #FFF !important;
+}
+
+.add_btc_btn:hover{
+  color: #000 !important;
+}
+
+.buyBitcoinHolder{
+  margin-top: 150px;
+}
+
+#buyBitcoin, #sendBitcoin, #addBitcoin{
+  width: 90%;
+  max-width: 750px;
+}
+
+.transferMessage, .calculateAvailable, .showAvailable{
+	margin: 5px 0px;
+}
+
+.transferMessage{
+	color: #FF0000;
+}

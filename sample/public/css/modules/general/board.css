@@ -1,0 +1,227 @@
+.wager_board{
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #666;
+  text-transform: uppercase;
+  font-size: 13px;
+  width: 100%;
+  border: thin solid #888;
+  background-color: rgba(0,0,0,.7);
+  padding: 10px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.wager_board>.table{
+  margin-bottom: 0px;
+  padding: 10px;
+}
+
+.wager_board{
+  color: #E6FF69;
+  text-align: left !important;
+}
+
+.wagerRow{
+  border-top: thin solid #888;
+}
+
+.wagerRowHeader{
+	background-color: #D51F27;
+	color: #FFF;
+}
+
+.wagerRowHeader>th{
+	padding: 10px 0px;
+}
+
+.wagerRow>td{
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100% !important;
+}
+
+.wagerRow:hover{
+  background-color: #222 !important;
+}
+
+.odd_row{
+  color: #FFD85A !important;
+}
+
+.your_bet{
+  background-color: rgba(255,255,255, .2) !important;
+}
+
+.your_win{
+  background-color: rgba(0,255,0, .2) !important;
+}
+
+.your_win:hover{
+  background-color: rgba(0,255,0, .15) !important;
+}
+
+.your_loss{
+  background-color: rgba(255,0,0, .2) !important;
+}
+
+.your_loss:hover{
+  background-color: rgba(255,0,0, .15) !important;
+}
+
+.no_winner{
+  background-color: rgba(0,0,0, .2) !important;
+}
+
+.no_winner:hover{
+  background-color: rgba(0,0,0, .15) !important;
+}
+
+.yourWager{
+	text-align: center !important;
+}
+
+.homeTeamColumn{
+  padding-left: 10px !important;
+}
+
+.game_date_time{
+  font-size: .9em;
+}
+
+.clickToExpandWagerDetails{
+  cursor: pointer;
+}
+
+.wagerRisk, .wagerWin{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.takeWager{
+  text-align: right;
+  padding-right: 10px;
+}
+
+.take_wager{
+  width: 100%;
+  text-align: center;
+  padding: 5px 0px;
+  color: #222;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #E6FF69;
+  display: inline-block;
+}
+
+.processing_funding_popup_box{
+  width: 450px;
+  margin-top: 150px;
+  margin-bottom: 0px;
+}
+
+.odd_row > .takeWager > .take_wager{
+  background-color: #FFD85A;
+}
+
+.pagination{
+	float: right;
+}
+
+.padWagerTable{
+  margin-bottom: 50px;
+}
+
+#filter_wagers{
+  position: absolute;
+  top: 15px;
+  right: 0px;
+  color: #E6FF69;
+  padding: 0px 10px;
+  font-size: 15px;
+  z-index: 50;
+}
+
+.padWagerTable #filter_wagers{
+	top: 10px;
+	right: 10px;
+}
+
+.wager_filter_popup_button{
+	color: #000;
+}
+
+.dataTables_empty{
+	display: none;
+}
+
+#wager_filtering{
+	display: block;
+}
+
+#filter_wagers select{
+	color: #333;
+}
+
+#wagerFilterLabel{
+	color: #333;
+}
+
+.no_wagers{
+	padding: 20px;
+	margin: 0px !important;
+}
+
+.hover_for_lines{
+	cursor: pointer;
+	text-transform: capitalize;
+}
+
+.wager_wall_team_hover{
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.tooltip-inner{
+	white-space: pre-wrap;
+}
+
+@media(max-width:1199px) {
+  .medium_table_top_border{
+  	margin-top: 10px;
+	padding: 15px 0px 10px;
+  	border-top: thin dashed;
+  }
+}
+
+@media(max-width:979px){
+  .header_center{
+	text-align: center;
+  	padding: 8px 0px;
+  }
+  
+  .header_border_bottom{
+	border-bottom: thin dashed #FFF;
+  }
+  
+  .game_info, .wagerDisplay{
+	border-bottom: thin dashed;
+  	text-align: center;
+  	padding: 8px 0px;
+  }
+  
+  .wager_amount_holder{
+	text-align: center;
+  	padding: 8px 0px;
+  }
+  
+  .wagerConfirmLogin{
+	border: none;
+  }
+  
+  .medium_table_top_border{
+	border: none;
+  	margin-top: 0px;
+  	padding: 10px 0px;
+  }
+}

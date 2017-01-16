@@ -1,0 +1,12 @@
+.update_email_notice{
+	margin-top: 15px;
+	font-size: .9em;
+}
+
+.non-click-btn{
+	cursor: default !important;
+}
+
+.error_red{
+	color: #FF0000;
+}

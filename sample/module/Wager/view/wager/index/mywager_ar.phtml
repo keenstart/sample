@@ -1,0 +1,97 @@
+<?php echo $this->partial('wager/partials/topmenu.phtml');?>
+<?php echo $this->partial('wager/partials/sidemenu.phtml');?>
+<?php echo $this->partial('wager/partials/talkwall.phtml');?>
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/backoffice/index.css');?>
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/wager/mywager.css');?>
+ 
+
+<?php echo $this->partial('wager/partials/wager.phtml',  array('newwager' => $newwager,'matchresult'=>$matchresult))?>
+
+<!-- begin MAIN PAGE CONTENT -->
+<div id="page-wrapper">
+
+    <div class="page-content col-xs-12 col-sm-9 col-md-9">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-title">
+                    <h1>Pending Wagers
+                    <small>View all your pending Wagers</small>
+                    </h1>
+                   <!--  <ol class="breadcrumb">
+                        <li><i class="fa fa-desktop"></i> <a href="<?php echo $this->url('wager', array('action'=>'index', 'controller' => 'index'))?>">The Wager Wall</a></i>
+                    </ol> -->
+                </div>
+            </div>
+        </div>
+         <div class="row col-xs-12 col-sm-12 col-md-12">
+            <ul class="nav nav-pills pendingWagersNavPills"> 
+              <li class="activePill">All</li> 
+              <li class="inactivePill">Received</li> 
+              <li class="inactivePill" >Sent</li> 
+            </ul>
+        </div>
+        <div class="row wager_wall_font_correct">
+            <div class="col-lg-12 padWagerTable">
+                <div id = "pageOn" style="display:none;">mywager</div>
+                <ul id = "wagerList" class="list-group scrollFeature">
+                  <?php foreach($this->myWagers as $wager):?>
+                   <li class="list-group-item" id="listEvtMatch<?php echo $wager['id'];?>">
+                       <div> 
+                            <div><h3><?php echo $wager['consoleName'] . ' - ' . $wager['gameName'] . ' - $'. $wager['riskAmount'];?></h3></div>
+                            <?php if($wager['typeId'] != 1):?>
+                                <?php if($this->userId == $wager['userAskId']):?>
+                                     <div><small>You have made a challenge</small></div>
+                                     <div><small><?php echo 'Opponent: ' . $wager['acceptusername'] ;?></small></div>
+                                <?php else:?>
+                                     <div><small>You have receive Wager</small></div>
+                                     <div><small><?php echo 'Opponent: ' . $wager['askusername'] ;?></small></div>
+                                <?php endif;?>
+                            <?php else:?>
+                                <div><small> You have made an Open Wager</small></div>                                     
+                            <?php endif;?>     
+                        </div>
+                        <div class="individualWager" id="buttEvtMatchResult<?php echo $wager['id'];?>">   
+                            <?php if($wager['status'] == 1):?>
+                                <div id = "wagerid" style="display:none;"><?php echo $wager['id'];?></div>
+                                <div role="group" aria-label="..."> 
+                                <?php if($this->userId == $wager['userAskId']):?>
+                                    <!-- Pending Button added by Ari -->
+                                    <a id = "pendingmatch" type="button" value2 = "<?php echo $wager['id'];?>" class="btn btn-default" disabled="disabled">Pending</a>   
+                                    <!-- End Ari's pending button  -->
+                                    <a id = "cancelmatch" type="button" value1 = "<?php echo 'cancelwager';?>" value2 = "<?php echo $wager['id'];?>" class="btn btn-danger cancelWager_open" href="#cancelWager">Cancel</a>
+                                    
+                                <?php else:?>
+                                    <a id = "acceptmatch" type="button" value1 = "acceptwager" value2 = "<?php echo $wager['id'];?>" class="btn btn-success  acceptWager_open" href="#acceptWager">Accept</a>
+                                    <a id = "declinematch" type="button" value1 = "declinewager" value2 = "<?php echo $wager['id'];?>" class="btn btn-danger declineWager_open" href="#declineWager">Decline</a>
+                                <?php endif;?>
+                            
+                                </div>
+                            <?php endif;?>
+                            <?php if($wager['status'] == 2):?>
+                                <a id="reportmatch" type="button" value = "<?php echo $wager['consoleName'] . ' - ' . $wager['gameName'] . ' - $'. $wager['riskAmount'];?>" value1 = "<?php echo $wager['id'];?>" 
+                               class="btn btn-success  reportMatch_open" href="#reportMatch">Report Match Result</a>
+                            <?php endif;?>
+                        </div>                     
+                  </li>
+                  <?php endforeach;?>
+                </ul>
+            </div>
+          <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- /.page-content -->
+
+</div>
+<script>
+//$(document).ready(function(){
+  //  $('#exit_wager').click(function(){
+    //  $('#postWager').popup("hide");
+   // });
+ // });
+</script>
+<!-- /#page-wrapper -->
+<!-- end MAIN PAGE CONTENT -->
+
+
+
+

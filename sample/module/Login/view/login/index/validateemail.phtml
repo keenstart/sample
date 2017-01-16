@@ -1,0 +1,71 @@
+<!-- begin MAIN PAGE CONTENT -->
+<div id="page-wrapper">
+    <div class="page-content">
+        <div class="row authentication_box_row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-lg-4 col-lg-offset-4">
+                <div class="portlet portlet-black">
+                    <div class="portlet-heading login-heading">
+                        <div class="portlet-title">
+                            <h4><strong>Authenticate your Email</strong></h4>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="portlet-body">
+<?php 
+    if(isset($this->error)):
+?>
+                        <p>There is a problem authenticating this transaction. Please <a href="">Log In</a> to resend
+                        the email validation link.</p>
+<?php 
+    elseif(isset($this->validToken)):
+?>
+                        <p>Your email has been properly validated. You will be redirected shortly.</p>
+                        <p>Or, <a href="<?php echo $this->url('backoffice', array('action' => 'index', 'controller' => 'index'));?>">
+                        click here</a> to login.</p>
+                        
+<script type="text/javascript">
+  $(document).ready(function(){
+    setTimeout(function(){
+      window.location.replace("<?php echo $this->redirectLink;?>");
+    }, 5000);
+  });
+</script>
+<?php 
+    elseif(isset($this->resentMessage)):
+?>
+                        <p>The verification email was sent to the email address you indicated.</p>
+<?php 
+    endif;
+?>
+<?php 
+    if(!isset($this->validToken) && !isset($this->error)):
+?>
+    
+<?php 
+    $resendWelcomeForm->setAttribute('action', $this->url('login', array('action' => 'validateemail', 'controller' => 'index')));
+    $resendWelcomeForm->prepare();
+?>
+                        <p style="color: #666;">In order to access the The WagerWall interface, you must first authenticate the email that has been
+                        sent to the address you indicated.</p>
+                        <p style="color: #666;">You can change your email address, or resend the authentication email below:</p>
+                        <?php  echo $this->form()->openTag($resendWelcomeForm);?>
+                            <fieldset>
+                                <div class="form-group">
+                                    <?php echo $this->formElement($resendWelcomeForm->get('email'));?>
+                                    <?php echo $this->formelementerrors($resendWelcomeForm->get('email'));?>
+                                </div>
+                                <?php echo $this->formElement($resendWelcomeForm->get('submit'));?>
+                            </fieldset>
+                        <?php  echo $this->form()->closeTag();?>
+<?php 
+    endif;
+?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.page-content -->
+</div>
+<!-- /#page-wrapper -->
+<!-- end MAIN PAGE CONTENT -->

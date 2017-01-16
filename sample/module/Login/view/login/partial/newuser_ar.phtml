@@ -1,0 +1,45 @@
+<?php
+  $newuser->setAttribute('action', $this->url('login', array('action' => 'index')));
+  $newuser->prepare();
+?>
+
+<div class="row login_popup_box">
+    <div class="col-md-12">
+        <div class="exit_x" id="exit_newuser">X</div>
+        <div class="portlet portlet-black">
+            <div class="portlet-heading login-heading">
+                <div class="portlet-title">
+                    <h4><strong>Join</strong>
+                    </h4>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="portlet-body">
+                <?php  echo $this->form()->openTag($newuser);?>
+                    <fieldset>
+                        <div class="form-group">
+                            <?php echo $this->formElement($newuser->get('email'));?>
+                            <?php echo $this->formelementerrors($newuser->get('email'));?>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $this->formElement($newuser->get('password'));?>
+                            <?php echo $this->formelementerrors($newuser->get('password'));?>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $this->formElement($newuser->get('repeat_password'));?>
+                            <?php echo $this->formelementerrors($newuser->get('repeat_password'));?>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $this->formElement($newuser->get('confirm_legal'));?>
+                            <span>I confirm that I am 18 years or older and agree to the Terms of Use</span>
+                            <?php echo $this->formelementerrors($newuser->get('confirm_legal'));?>
+                        </div>
+                        <br>
+                        <input type="hidden" name="form_type" value="newuser"/>
+                        <?php echo $this->formElement($newuser->get('submit'));?>
+                    </fieldset>
+                <?php echo $this->form()->closeTag();?>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<?php
+  $login->setAttribute('action', $this->url('login', array('action'=>'index')));
+  $login->prepare();
+?>
+
+<div class="row login_popup_box">
+    <div class="col-md-12">
+        <div class="exit_x" id="exit_login">X</div>
+        <div class="portlet portlet-black">
+            <div class="portlet-heading login-heading">
+                <div class="portlet-title">
+                    <h4><strong>Login</strong>
+                    </h4>
+                </div>
+                
+                <div class="clearfix"></div>
+            </div>
+            <div class="portlet-body">
+                 <?php  echo $this->form()->openTag($login);?>
+                    <fieldset>
+                        <div class="form-group">
+                            <?php echo $this->formElement($login->get('email'));?>
+                            <?php echo $this->formelementerrors($login->get('email'));?>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $this->formElement($login->get('password'));?>
+                            <?php echo $this->formelementerrors($login->get('password'));?>
+                        </div>
+                        <input type="hidden" name="form_type" value="login"/>
+                        <br>
+                        <?php echo $this->formElement($login->get('submit'));?>
+                    </fieldset>
+                    <br>
+                    <p class="small">
+                        <a id="forgot_password">Forgot your password?</a>
+                    </p>
+                    <br>
+                    <a href="<?php echo $this->loginUrl ?>">
+                        <img alt="Connect to your Facebook Account" src="<?php echo $this->basePath() . '/img/fb.png'?>">  
+                   </a>
+                 <?php echo $this->form()->closeTag();?>
+            </div>
+        </div>
+    </div>
+</div>

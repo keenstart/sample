@@ -1,0 +1,48 @@
+.update_email_notice{
+	margin-top: 15px;
+	font-size: .9em;
+}
+
+.non-click-btn{
+	cursor: default !important;
+}
+
+.error_red{
+	color: #FF0000;
+}
+/* User Profile Css Fixed on 7/1/16 */
+.nav-stacked > li > a {
+	color: white;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+	border-color: white !important;
+	background: white !important;
+	color: rgba(19,19,21,1) !important; 
+}
+#userSettingsContent h3 {
+	color: white;
+}
+#userTab > li > a {
+	color: white;
+}
+#userTab > li.active > a {
+	background: rgba(67,168,72,1) !important;
+	border-color: rgba(67,168,72,1) !important;
+}
+.nav-tabs {
+	border-bottom: none;
+}
+#overview h2 {
+	color: white;
+}
+.tableScroll {
+	height: 50vh;
+	overflow-y: scroll;
+}
+.tableScroll .even {
+	background: white;
+}
+/* Wallet Css Fixed on 7/1/16 */
+#userSettingsContent label {
+	color: white;
+}

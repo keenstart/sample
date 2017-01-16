@@ -1,0 +1,24 @@
+<div id="talkWall">
+	<h2>TalkWall</h2>
+  <div class="selectContainer">
+        <select id="talkChannel" onchange="getTalkChannel(0)" style="font-family:'FontAwesome', Arial;">
+          <?php foreach($this->theChannels as $theChannel):?>
+                <option value=<?php echo $theChannel->id;?>><?php echo $theChannel->channel;?>
+                </option>
+          <?php endforeach;?>
+
+        </select>
+  </div>
+	<ul id = "talkList"  class="talkWallMessages talkWallScroll">
+	</ul>
+	<div class="userMessageInputContainer">
+		<input id="talkMsg" class="talkWallTextInput" type="textarea" placeholder="tag your message...">
+		<button id = "sendTalk" class="btn btn-success tagSubmitBtn">Tag!</button>
+	</div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+        getTalkChannel(0);
+  });
+</script>

@@ -1,0 +1,188 @@
+.wager_wall_font_correct{
+	/* Start Ari's css edit
+	font-size: 20px;*/
+	margin-top: 3%;
+}
+.scrollFeature {
+  max-height: 70vh;
+  overflow: scroll;
+}
+
+.page-content {
+	transition: 1s all ease !important; 
+}
+/* Start TalkWall's css */
+#talkWall {
+	transition: 1s all ease;
+}
+.toggleTalkWall {
+	transform: translateX(100%);
+}
+#talkWall-toggle {
+	transition: 1s all ease;
+}
+.rotateTalkWallIcon {
+	transform: rotate(-90deg);
+}
+
+#talkWall {
+	height: 100%;
+	background: rgba(44,44,44,1);
+	border-right: 5px solid rgba(19,19,21,1);
+	border-left: 5px solid rgba(19,19,21,1);
+	position: fixed;
+	right: 0px;
+	top: 50px;
+	bottom: 0px;
+	padding: 5px;
+	z-index: 3000;
+	color: white;
+}
+.talkWallScroll {
+  overflow: auto;
+  height: 65%;
+}
+#talkWall > h2 {
+	border-bottom: 1px solid rgba(221,221,221,.5);
+	opacity: .8;
+	margin: 5px auto;
+}
+#talkWall select {
+	background: transparent;
+	-webkit-appearance: none;
+	border: none;
+	width: 100%;
+	height: 2.6em;
+}
+#talkWall select:focus {
+	outline: none;
+}
+.talkWallMessage {
+	display: inline-block;
+	vertical-align: middle;
+	width: 65%;
+}
+.talkWallUser {
+	color: #5db85c;
+}
+.talkWallMessageTime {
+	display: inline-block;
+	vertical-align: middle;
+	width: 30%;
+}
+.talkWallTextInput {
+	min-height: 3em;
+	padding: 5px;
+    display: block;
+    width: 100%;
+    margin: 5px auto;
+    border-style: solid;
+	border-width: 1px;
+	border-color: rgb(204, 204, 204);
+	border-radius: 1px;
+	background-color: rgb(255, 255, 255);
+	box-shadow: inset 0.5px 0.866px 1px 0px rgba(0, 1, 1, 0.15);	  
+	color: rgba(0,0,0,.8);
+}
+::-webkit-input-placeholder { /* aChrome/Opera/Safari */
+  font-size: .7em;
+}
+.userMessageInputContainer {
+	text-align: right;
+    position: fixed;
+    right: 5px;
+    bottom: 0px;
+    background: rgba(44,44,44,1);
+    padding: 10px;
+
+}
+.talkWallMessages {
+	list-style: none;
+}
+.talkWallMessages p {
+	font-size: 1em;
+	margin: 0 0 0px !important; 
+}
+/* End TalkWall's css */
+.individualWager {
+	position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.pendingWagersNavPills{
+	position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+.pendingWagersNavPills > li {
+	margin: 15px; 
+	padding: 5px 15px;
+}
+.activePill {
+	background: #5db85c;
+	border-radius: 2px; 
+}
+.inactivePill:hover {
+	cursor: pointer;
+}
+#madeWager {
+	margin-top: 10%;
+}
+/* User Profile CSS */
+.editProfileBtnContainer {
+	padding: 15px;
+	text-align: right;
+}
+.userInformationContainer {
+	background: #FFF;
+	border-radius: 2px;
+	text-align: center;
+	padding: 15px; 
+}
+.userInformationContainer td {
+	padding: 10px;
+}
+.userInformationContainer h2 {
+	text-align: left;
+}
+.userInfoColumns {
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+}
+#unreadMsgs {
+	color: white;
+	border: 1px solid;
+	padding: 1px 5px;
+	border-radius: 50px;
+}
+
+@media(min-width:768px) {
+	.userInfoColumns {
+	width: 49%;
+	}
+}
+
+/* End Ari's edits */
+
+.page-content p{
+	color: #FFF;
+}
+
+.historyHeader{
+	color: #FFF;
+}
+
+.top_menu_available_credits{
+	color: #FFF;
+	margin: 10px;
+	font-size: 1.3em;
+	cursor: pointer;
+}
+
+.portlet-gray-text{
+	color: #666 !important;
+}

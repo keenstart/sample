@@ -1,0 +1,32 @@
+/* FLEX ADMIN DEMO STYLES */
+
+/* The following styles are used for demo purposes. */
+
+/* Organizing the Icons Page */
+select {
+
+}
+.challenge-form {
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 10px;
+   /* color: rgba(255,255,255,.7);*/
+}
+
+.challenge-form select {
+    /*font-size: 0px;*/
+    font-size: 1em;
+    width: 250px;
+    height: 100%;
+}
+
+.challenge-form input {
+    font-size: 10px;
+    width: 400px;
+    font-weight: lighter;
+    margin-top: 10px;
+}
+.challenge-form td {
+
+    height: 20px;
+}

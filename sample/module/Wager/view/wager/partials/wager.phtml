@@ -1,0 +1,512 @@
+<div id="postWager">
+    <?php
+      $newwager->setAttribute('action', $this->url('wager', array('action' => 'createwager', 'controller' => 'index')));
+      $newwager->prepare();
+    ?>
+
+    <div class="row login_popup_box">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="exit_x" id="exit_wager">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>CREATE WAGER</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <?php  echo $this->form()->openTag($newwager);?>
+                        <fieldset>
+                            <input id="socketId" type="hidden" name="socket_id" value=""/>
+                            
+                            <div class="form-group col-xs-12 col-sm-12 col-md-12 wagerTypeContainer">
+                                <!--<label for="userAccept"><?php// echo $this->formLabel($newwager->get('userAccept')); ?></label>-->
+                                <?php echo $this->formElement($newwager->get('typeId'));?>
+                                <?php echo $this->formelementerrors($newwager->get('typeId'));?>
+                            </div>
+                            
+                            <div class="form-group col-xs-12 col-sm-12 col-md-12" id="opponentgroup">
+                                <label for="userAccept"><?php echo $this->formLabel($newwager->get('userAccept')); ?></label>
+                                <?php echo $this->formElement($newwager->get('userAccept'));?>
+                                <?php echo $this->formelementerrors($newwager->get('userAccept'));?>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                                <label for="consoleId"><?php echo $this->formLabel($newwager->get('consoleId')); ?></label>
+                                <?php echo $this->formElement($newwager->get('consoleId'));?>
+                                <?php echo $this->formelementerrors($newwager->get('consoleId'));?>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                                <label for="gameId"><?php echo $this->formLabel($newwager->get('gameId')); ?></label>
+                                <?php echo $this->formElement($newwager->get('gameId'));?>
+                                <?php echo $this->formelementerrors($newwager->get('gameId'));?>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                                <label for="riskAmount"><?php echo $this->formLabel($newwager->get('riskAmount')); ?></label>
+                                <!-- <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                </div> -->
+                                <?php echo $this->formElement($newwager->get('riskAmount'));?>
+                                <?php echo $this->formelementerrors($newwager->get('riskAmount'));?>
+                                
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                                <label for="consoleUsername"><?php echo $this->formLabel($newwager->get('consoleUsername')); ?></label>
+                                <?php echo $this->formElement($newwager->get('consoleUsername'));?>
+                                <?php echo $this->formelementerrors($newwager->get('consoleUsername'));?>
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-12 col-md-12"> <!--form-group col-xs-12 col-sm-6 col-md-6-->
+                                <label for="askRules"><?php echo $this->formLabel($newwager->get('askRules')); ?></label>
+                                <?php echo $this->formTextarea($newwager->get('askRules'));?>
+                                <?php echo $this->formelementerrors($newwager->get('askRules'));?>
+                            </div>
+                            
+                            <!--
+                            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                               <label for="comments"><?php //echo $this->formLabel($newwager->get('comments')); ?></label>
+                               <?php //echo $this->formElement($newwager->get('comments'));?>
+                               <?php //echo $this->formelementerrors($newwager->get('comments'));?>
+                            </div>-->
+
+                            <div class="form-group">
+                                <?php //echo $this->formElement($newuser->get('confirm_legal'));?>
+                                <!--<p>You must confirm that betting is legal in your jurisdiction</p>-->
+                                <?php //echo $this->formelementerrors($newuser->get('confirm_legal'));?>
+                            </div>
+                            <br>
+                            <!-- Ari Css found in postWager.css -->
+                            <div class="confirmWagerContainer">
+                                <div class="postWagerTermsContainer">
+                                    <p>*thegamerwall.com service fees will apply</p>
+                                    <p>
+                                        <a class="active" href="<?php echo $this->url('wager', array('action'=>'rules', 'controller' => 'terms'));?>">
+                                            <u>GamerWall Rules</u>
+                                        </a> | 
+                                        <a class="active" href="<?php echo $this->url('wager', array('action'=>'index', 'controller' => 'terms'));?>">
+                                            <u>Terms &amp; Conditions</u>
+                                        </a> | Setup</p>
+                                </div>
+                                <div class="postWagerSubmitOptionsContainer">
+                                    <button id="close_wager" type="button" class="btn btn-default btn-lg">Close</button>
+                                    <input type="hidden" name="form_type" value="newuser"/>
+                                    <?php echo $this->formElement($newwager->get('submit'));?>
+                                </div>
+                            </div>
+                        </fieldset>
+                    <?php echo $this->form()->closeTag();?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="madeWager">
+    <div class="row login_popup_box">
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="exit_x" id="exit_rules">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Wager Rules</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <p class="acceptWagerDisclaimer">Once a Wager is accepted the game is on and has 
+                        2 hours to be completed. The creator of the Wager must be the one to look for the acceptor online once Wager is accepted. Do not accept or make a wager 
+                        unless you are sure you want to play and accept all 
+                        <a class="active" href="<?php echo $this->url('wager', array('action'=>'rules', 'controller' => 'terms'));?>">
+                            <u>GamerWall Rules</u>
+                        </a>.
+                    </p>
+                    <!-- Ari's edit css in postWager.css -->
+                    <div class="postWagerConfirmWagerRulesContainer">
+                        <input id="acceptWagerRulesCheckbox" class="popupCheckbox" type="checkbox"><label><small> I have Read and Accepted all GamerWall Rules</small></label>
+                        <div id="madewagerCancel" type="button" class="btn btn-danger" 
+                      >Cancel</div>
+                        <div id="madewagerSubmit" disabled="disabled" type="button" class="btn btn-success" 
+                      >Make Wager</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="acceptWager">
+    <div class="row login_popup_box">
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="exit_x" id="exit_acceptWager">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Accept Wager</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <div id="individualWagerDetails">
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6" id="opponentgroup">
+                            <label>Opponent</label>
+                            <div id="wager-opponent"></div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6" id="opponentgroup">
+                            <label>Wager Amount</label>
+                            <div id="wager-wagerAmount"></div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6" id="opponentgroup">
+                            <label>Wager Game</label>
+                            <div id="wager-game"></div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6" id="opponentgroup">
+                            <label>Chosen Console</label>
+                            <div id="wager-consoleName"></div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6" id="opponentgroup">
+                            <label>Opponent's Console Username</label>
+                            <div id="wager-consoleUsername"></div>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6" id="opponentgroup">
+                            <label>Opponent's Rules/Comments</label>
+                            <p id="wager-askRules"></p>
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6" id="opponentgroup">
+                            <label>Your Console Username</label>
+                            <p><input id="accept-consoleusername" type="text" name="consoleusername"></p>
+                        </div>
+                         <div class="form-group col-xs-12 col-sm-6 col-md-6" id="opponentgroup">
+                            <label>Match Id</label>
+                            <p id="wager-MatchId"></p>
+                        </div>
+                        <div class="confirmWagerContainer">
+                                <div class="acceptWagerTerms">
+                                <p> Once a Wager is accepted the game is on and has 
+                        2 hours to be completed. The creator of the Wager must be the one to look for the acceptor online once Wager is accepted. Do not Accept or Make a wager 
+                        unless you are sure you want to play and accept all 
+                        <a class="active" href="<?php echo $this->url('wager', array('action'=>'rules', 'controller' => 'terms'));?>">
+                            <u>GamerWall Rules</u>
+                        </a>. <i>Remember in order to dispute you must record game via Twitch.</i></p>
+                                </div>
+                        </div>                
+                    </div>
+                    <div class="acceptWagerContainer">
+                    <input id="acceptWagerPopUpCheckbox" class="popupCheckbox" type="checkbox"><label><small> I have Read and Accepted all <a class="active" href="<?php echo $this->url('wager', array('action'=>'rules', 'controller' => 'terms'));?>">
+                                                <u>GamerWall Rules</u></a></small></label>
+                    <div id="acceptwager" type="button" disabled="disabled" class="btn btn-success" 
+                      >Accept Wager</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="wagerDetailsView">
+    <div class="row login_popup_box">
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="exit_x" id="exit_wagerDetails">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Wager Details</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <div id="individualWagerDetails">
+                        <div class="form-group"  id="opponentgroup">
+                            <label>Opponent</label>
+                            <div id="wagerDetails-opponent"></div>
+                        </div>
+                        <div class="form-group"  id="opponentgroup">
+                            <label>Wager Amount</label>
+                            <div id="wagerDetails-wagerAmount"></div>
+                        </div>
+                        <div class="form-group"  id="opponentgroup">
+                            <label>Wager Creator's Console Username</label>
+                            <div id="wagerDetails-consoleUsername"></div>
+                        </div>
+                        <div class="form-group"  id="opponentgroup">
+                            <label>Wager Acceptor's Console Username</label>
+                            <div id="wagerAcceptorDetails-consoleUsername"></div>
+                        </div>
+                        <div class="form-group " id="opponentgroup">
+                            <label>Wager Game</label>
+                            <div id="wagerDetails-game"></div>
+                        </div>
+                        <div class="form-group " id="opponentgroup">
+                            <label>Chosen Console</label>
+                            <div id="wagerDetails-consoleName"></div>
+                        </div>
+                        <div class="form-group  " id="opponentgroup">
+                            <label>Wager Rules/Comments</label>
+                            <p id="wagerDetails-askRules"></p>
+                        </div>
+                        <div class="form-group  " id="opponentgroup">
+                            <label>Match Id</label>
+                            <p id="wagerDetails-MatchId"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="declineWager">
+    <div class="row login_popup_box">
+        <div class="col-md-8">
+            <div class="exit_x" id="exit_declineWager">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Decline Wager</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <p>You are Declining this wager</p>
+                    <div  id="declinewager" type="button" class="btn btn-danger" 
+                            >Decline</div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="getHelpPopup" style="width:50%;" class="noshow">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="exit_x" id="exit_helpPopup">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>GamerWall Support</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <p>Have questions or need help? Send us an email</p>
+                    <p>
+                      <input id="helpquestion" style="width:100%;" type="text" placeholder="Ask your question">
+                    </p>
+                    <div  id="sendHelpEmail" type="button" class="btn btn-success" >Ask Us</div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="cancelWager">
+    <div class="row login_popup_box">
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="exit_x" id="exit_cancelWager">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Decline Rules</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <p>Are you sure you would like to cancel this wager.</p>
+                    <div id="cancelwager" type="button" class="btn btn-danger" 
+                       href="">Cancel</div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="messageWager">
+    <div class="row login_popup_box">
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="exit_x" id="exit_messageWager">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>GamerWall</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <p id="messagewager"></p>
+                    <div id="cancelmessage" type="button" class="btn btn-danger" 
+                       href="">OK</div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="madeCCDeposit">
+    <div class="row login_popup_box">
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="exit_x" id="exit_deposit">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Wager Credit Card</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <p>Post credit card transaction</p>
+                    <div id="madedepositSubmit" type="button" class="btn btn-success" 
+                      >Post Deposits</div>
+                    <div id="madedepositCancel" type="button" class="btn btn-danger" 
+                      >Cancel</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div id="disputeWager" style="margin: 10% auto">
+    <div class="row login_popup_box">
+        <div class="col-xs-10 col-sm-10 col-md-10">
+            <div class="exit_x" id="exit_dispute">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Dispute Wager</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <div id = "dispute-wagerid" style="display:none;"></div>
+                    <p>Dispute ID</p>
+                    <p id="p-disputerid" class="form-group col-xs-12 col-sm-12 col-md-12">
+                        Wager ID
+                    </p>
+                    <p>Wager ID</p>
+                    <p id="p-wagerid" class="form-group col-xs-12 col-sm-12 col-md-12">
+                        Wager ID
+                    </p>                    
+                    <p>Users</p>
+                    <span id="span_disputer" class="form-group col-xs-6 col-sm-6 col-md-6" placeholder="User 1">
+                        User 1
+                    </span>
+                    <span id="span_disputer-against" class="form-group col-xs-6 col-sm-6 col-md-6" placeholder="User 1">
+                        User 2
+                    </span>                   
+                    <p>Upload Twitch Video</p>
+                    <input id="disputer-linkurl" type="url" class="form-group col-xs-12 col-sm-12 col-md-12">
+                    <p>Comments</p>
+                    <textarea id="dispute-details" class="form-group col-xs-12 col-sm-12 col-md-12" >
+                    </textarea>               
+                    <p>
+                    </p>
+                    <div class="confirmWagerContainer">
+                        <div class="postWagerTermsContainer">
+                            <p>*Must upload Twitch video for Dispute to be considered</p>
+                        </div>
+                        <div class="postWagerSubmitOptionsContainer ">
+                            <div id="disputeClose" type="button" class="btn btn-success">Close</div>
+                            <div id="submitDispute" type="button" class="btn btn-danger">Submit</div>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<?php if(isset($matchresult)):?>
+<div id="reportMatch">
+    <?php
+      $matchresult->setAttribute('action', $this->url('wager', array('action' => 'match', 'controller' => 'index')));
+      $matchresult->prepare();
+    ?>
+
+    <div class="row login_popup_box">
+        <div class="col-md-12">
+            <div class="exit_x" id="exit_Match">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Wager Result</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                     <?php  echo $this->form()->openTag($matchresult);?>
+                        <fieldset>
+                            <input id="matchid" type="hidden" name="id" value=""/>
+                            <div class="form-group">
+                                <div id="matchdetail"> </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="userAccept"><?php echo $this->formLabel($matchresult->get('matchresult')); ?></label>
+                                <?php echo $this->formElement($matchresult->get('matchresult'));?>
+                                <?php echo $this->formelementerrors($matchresult->get('matchresult'));?>
+                            </div>
+                            <div class="disputeWagerInformation form-group">
+                                <div class="form-group">
+                                    <label>Wager ID</label>
+                                    <p id="p-wager-id" class="form-group col-xs-12 col-sm-12 col-md-12">
+                                        Wager ID
+                                    </p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Users</label>
+                                    <p>
+                                        <span id="span-disputer" class="form-group col-xs-6 col-sm-6 col-md-6" placeholder="disputer">
+                                            Disputer
+                                        </span>
+                                        <span id="span-disputer-against" class="form-group col-xs-6 col-sm-6 col-md-6" placeholder="disputeeAgainst">
+                                            Disputee Against
+                                        </span>
+                                    </p>
+                                </div>
+                                <div class="form-group">      
+                                    
+                                    <div class="control-group">
+                                    <label class="control-label" for="url"><?php echo $this->formLabel($matchresult->get('url')); ?></label>
+                                        <div class="controls">
+                                            <?php echo $this->formElement($matchresult->get('url'));?>
+                                            <?php echo $this->formelementerrors($matchresult->get('url'));?>
+                                        </div>
+                                     </div>                                    
+<!--                                    <label>Upload Twitch Video</label>
+                                    
+                                    <input type="url" class="form-group col-xs-12 col-sm-12 col-md-12">-->
+                                    
+                                    <p class="error">*Must upload Twitch video link for Dispute to be considered</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="control-group">
+                                <label class="control-label" for="comments"><?php echo $this->formLabel($matchresult->get('comments')); ?></label>
+                                    <div class="controls">
+                                        <?php echo $this->formTextarea($matchresult->get('comments'));?>
+                                        <?php echo $this->formelementerrors($matchresult->get('comments'));?>
+                                    </div>
+                                 </div>
+                            </div>                           
+                            <br>
+                            <?php echo $this->formElement($matchresult->get('submit'));?>
+                        </fieldset>
+                     <?php echo $this->form()->closeTag();?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif;?>
+
+<script type="text/javascript">
+$(document).ready(function(){
+        getGameWagerForm("#wager-console-id");
+  });
+</script>
+

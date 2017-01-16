@@ -1,0 +1,1113 @@
+<?php
+    $this->headLink()->appendStylesheet($this->basepath() . '/css/modules/login/login.css');
+    $this->headLink()->appendStylesheet($this->basepath() . '/css/demo/index/demo.css');
+?>
+
+
+<!-- login/index/index Begin-->
+
+<div id="headerSection">
+  <div id="homePageHeader">
+    <div class="flexContainer">
+      <div class="logoContainer" >
+        <img class="home_logo" src="<?php echo $this->basepath();?>/images/login/gamerWallLogo.png"/>
+      </div>
+    </div>
+    <div class="flexContainer btnContainer">
+      <div id="loginBtn" class="headerBtn">
+        <a class="home_page_upper_right_button home_login_button btn btn-lg login_open" href="#login">Log in</a>
+      </div>
+      <div id="joinBtn" class="headerBtn">
+        <button class="btn btn-lg home_signup_button home_page_upper_right_button" id="open_new_account">Join</button>
+      </div>
+    </div>
+  </div>
+  <div class="welcomeMsg">
+    <h1>Put your money</h1>
+    <h1>where your mouth is</h1>
+    <h3>The gaming platform that allows head to head wagers for cash</h3>
+    <div id="landingPageWager">JOIN</div> 
+  </div>
+</div>
+
+<div id="howItWorksSection">
+  <h1 class="sectionTitle">HOW IT WORKS</h1>
+  <p class="rectangleUnderline redLine"></p>
+  <div class="stepsFlexContainer">
+    <div class="individualStep howitworksAnimation">
+      <div class="iconHolder">
+        <img class="stepIcon" src="<?php echo $this->basepath();?>/images/login/registerUser.svg">
+      </div>
+      <h3 class="stepTitle">Register</h3>
+      <p class="stepDescription">Start by creating a free account and choosing your prefered eSports game and console.</p>
+    </div>
+    <div class="nextArrowStep">
+      <i class="fa fa-arrow-right fa-4x" aria-hidden="true"></i>
+    </div>
+    <div class="individualStep howitworksAnimation">
+      <div class="iconHolder">
+        <img class="stepIcon" src="<?php echo $this->basepath();?>/images/login/playIcon.svg">
+      </div>
+      <h3 class="stepTitle">Wager & Play</h3>
+      <p class="stepDescription">Create or find Open Wagers on the Wall to play. Choose the amount you want to play for and compete against gamers from around the globe.</p>
+    </div>
+    <div class="nextArrowStep">
+      <i class="fa fa-arrow-right fa-4x" aria-hidden="true"></i>
+    </div>
+    <div class="individualStep howitworksAnimation">
+      <div class="iconHolder">
+        <img class="stepIcon" src="<?php echo $this->basepath();?>/images/login/cashIcon.svg">
+      </div>
+      <h3 class="stepTitle textGreen">Win CASH!</h3>
+      <p class="stepDescription">The winner of each match will automatically receive the total earnings and be credited to their account. Time to Wager and Play again!</p>
+    </div>
+  </div>
+</div>
+<div id="whoWeAreSection">
+  <h1 class="sectionTitle textRed">WHAT IS THE GAMERWALL?</h1>
+  <p class="rectangleUnderline blackLine"></p>
+  <div class="webappscreenAnimation whoweareAnimation"> 
+     <img class="stepIcon" src="<?php echo $this->basepath();?>/images/login/webAppScreen.png">
+  </div>
+  <div class="companybriefAnimation whoweareAnimation">
+    <p class="wagerWallCompanyBrief">The GamerWall is an eSports gaming platform that allows players to "Put Their Money Where Their Mouth Is".
+    We provide a secure network for gamers to gather and compete for cash. If you crave competition and think you can take on the best, you come to the GamerWall. We feature head to head matches of your favorite eSports games. Put your skills to the test and become the best gamer around!
+    </p>
+  </div>
+</div>
+<div id="gamesSection">
+  <h1 class="sectionTitle">COMPETE IN THE GREATEST SPORTS GAMES</h1>
+  <p class="rectangleUnderline redLine"></p>
+  <div class="gameScreenContainer"> 
+    <img src="<?php echo $this->basepath();?>/images/login/playSoccerWagerWall.jpg">
+    <p class="gameTitle">FIFA</p>
+    <div class="underlineRectangle"></div>
+  </div>
+   <div class="gameScreenContainer"> 
+    <img src="<?php echo $this->basepath();?>/images/login/playFootballWagerWall.jpg">
+    <p class="gameTitle">MADDEN</p>
+    <div class="underlineRectangle"></div>
+  </div>
+   <div class="gameScreenContainer"> 
+    <img src="<?php echo $this->basepath();?>/images/login/playNBAWagerWall.jpg">
+    <p class="gameTitle">NBA2k</p>
+    <div class="underlineRectangle"></div>
+  </div>
+   <div class="gameScreenContainer"> 
+    <img src="<?php echo $this->basepath();?>/images/login/playRockLeagueWagerWall.jpg">
+    <p class="gameTitle">ROCKET LEAGUE</p>
+    <div class="underlineRectangle"></div>
+  </div>
+</div>
+<div id="partnerSection">
+  <h1 class="sectionTitle textRed">PARTNERED WITH</h1>
+  <p class="rectangleUnderline blackLine"></p>
+  <div class="partner"> 
+    <img src="<?php echo $this->basepath();?>/images/login/sbnation.png">
+  </div>
+  <div class="partner"> 
+    <img src="<?php echo $this->basepath();?>/images/login/empyrealLogo.png">
+  </div>
+  <div>
+    <button id="createAccountBtn">CREATE ACCOUNT</button>
+  </div>
+</div>
+<footer id="homePageFooter">
+  <div class="individualFooterSection copyrightPhrase">
+    <p>The GamerWall is an eGaming platform that facilitates the organization of online video games played for cash legally. The GamerWall is not affiliated with, and our services are not endorsed by, any video game maker or sports league.
+    </p>
+    <p>
+      &copy; 2016 All rights reserved, The GamerWall, LLC
+    </p>
+  </div>
+  <div class="individualFooterSection mediaFooterSection">
+    <div class="socialMediaHolder">
+      <div class="socialMediaChannel"> 
+        <a href="https://www.facebook.com/thewagerwall/" target="_blank"><img class="socialMediaIcon" src="<?php echo $this->basepath();?>/images/login/wagerWallFacebook.svg"></a>
+      </div>
+      <div class="socialMediaChannel"> 
+        <a href="https://twitter.com/TheWagerWall" target="_blank" ><img class="socialMediaIcon" src="<?php echo $this->basepath();?>/images/login/wagerWallTwitter.svg"></a>
+      </div>
+      <div class="socialMediaChannel"> 
+          <a target="_blank" href="https://www.twitch.tv/wagerwall"><img class="socialMediaIcon" src="<?php echo $this->basepath();?>/images/login/wagerWallTwitch.svg"></a>
+      </div>
+      <div class="socialMediaChannel"> 
+        <a href="https://www.reddit.com/user/wagerwall" target="_blank"><img class="socialMediaIcon" src="<?php echo $this->basepath();?>/images/login/wagerWallReddit.svg"></a>
+      </div>
+    </div>
+    <div class="footerSeparator"></div>
+    <p><span data-toggle="modal" data-target="#termsofuse">Terms of Service</span> | <span data-toggle="modal" data-target="#privacy">Privacy Statement</span> | <span data-toggle="modal" data-target="#wagerWallRules">Rules</span></p>
+  </div>
+
+</footer>
+
+<!-- 
+<div class="row full_page">
+    <div class="col-sm-4 col-md-3 col-lg-2 nav-sidebar-home">
+        <div class="row home_left_nav_float"></div>
+        <div class="row home_left_nav">
+            <div class="row home_left_nav_element">
+                <div class="home_left_nav_logo_holder"><img class="home_logo" src="<?php echo $this->basepath();?>/images/login/wagerwall_logo.png"/></div>
+            </div>
+            <div class="row home_left_nav_element" data-toggle="modal" data-target="#whatisthewagerwall">What is the Wager Wall?</div>
+            <div class="row home_left_nav_element" data-toggle="modal" data-target="#howitworks">How does it work?</div> -->
+            <!--<div class="row home_left_nav_element" id="landingPageWager">Create A Wager</div>  Challenge-->
+            <!--<div class="row home_left_nav_element" data-toggle="modal" data-target="#betting101">Betting 101</div>-->
+           <!--  <div class="row home_left_nav_element" data-toggle="modal" data-target="#faq">FAQ's</div> -->
+         <!--    <div class="row home_left_nav_element" data-toggle="modal" data-target="#termsofuse">
+            Terms of Use</div>
+            <div class="row home_left_nav_element" data-toggle="modal" datatarget="#wagerWallRules">
+            Rules</div>
+            <div class="row home_left_nav_element" data-toggle="modal" data-target="#privacy">
+            Privacy</div>
+        </div>
+    </div> -->
+
+   <!--  <div class="col-xs-12 col-sm-8 col-sm-offset-4 col-md-9 col-md-offset-3 col-lg-10 col-lg-offset-2">
+        <div class="row home_content_background">
+            <div class="col-xs-12 col-sm-offset-4 col-sm-8 col-md-offset-3 col-md-9 col-lg-offset-6 col-lg-6 nav_position_holder_allow_click_events nav_position_holder">
+              <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                  <div class="row">
+                    <div class="col-md-3 col-sm-4">
+                      <a class="home_page_upper_right_button home_login_button btn btn-lg login_open" href="#login">Log in</a>
+                    </div>
+                    <div class="col-md-3 col-sm-4">
+                      <button class="btn btn-lg home_signup_button home_page_upper_right_button" id="open_new_account">Join</button>
+                    </div>
+                    <div class="col-md-3 col-sm-4">
+                      <a class="home_page_upper_right_button home_open_button btn btn-lg postWager_open" id="landingPageWager">CREATE WAGER</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <?php
+            /*
+             * 
+             * First Tab:
+             * 
+             * 
+            */
+            ?>
+            <div class="col-xs-12" id="homeContentScroll">
+                <div class="row content_section home-tab-1">
+                    <div class="col-xs-12">
+                        <div class="row home_text_content">
+                            <div class="wager_board">
+                                <?php
+                                  if($this->activeWagers) echo $this->partial('back-office/partial/sort_wagers.phtml', 'back-office');
+                                  echo $this->partial('back-office/partial/active_wagers.phtml', array('module' => 'back-office', 'wagers' => $this->activeWagers, 'wallet' => \Application\Models\Wallets\AbstractWallet::wagerwallFactory()));
+                                ?>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- 
+<div class="welcomeToBeta"><h1>Welcome to The Wager Wall beta 1.2.2.1</h1></div> -->
+<!-- login/partial/login.phtml Begin-->
+<div id="login">
+  <?php echo $this->partial('login/partial/login.phtml');?>
+</div>
+<!-- login/partial/login.phtml End-->
+<!-- login/partial/newuser.phtml Begin-->
+<div id="newUser">
+  <?php echo $this->partial('login/partial/newuser.phtml');?>
+</div>
+<!-- login/partial/newuser.phtml End-->
+<!-- login/partial/forgot_password.phtml Begin-->
+<div id="forgotPassword">
+    <?php echo $this->partial('login/partial/forgot_password.phtml')?>
+</div>
+<!-- login/partial/forgot_password.phtml End-->
+<div id="forgotSent">
+    <div class="row login_popup_box">
+        <div class="col-md-12">
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Password Reminder</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                    <p>An email has been sent with a link to reset your password.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Terms of use pop up -->
+<div class="modal modal-flex fade" id="termsofuse">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="challenge-form-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="whatIsLabel">The GamerWall LLC Terms and Conditions</h4>
+      </div>
+      <div class="modal-body betaScroll">
+          <h3>Introduction</h3>
+          <p>
+          These terms and conditions govern your use of this website; by using this website, you accept these terms and conditions in full.   If you disagree with these terms and conditions or any part of these terms and conditions, you must not use this website. 
+
+You must be at least 18 years of age to use this website.  By using this website you warrant and represent that you are at least 18 years of age.
+
+This website uses cookies.  By using this website and agreeing to these terms and conditions, you consent to our The GamerWall LLC's use of cookies in accordance with the terms of The GamerWall LLC's privacy policy.
+          </p>
+          <h3>Legal Compliance</h3>
+          <p>
+         You are subject to, and are solely responsible for obeying all laws of the state, province and/or country in which you reside and from which you access the site, log-in to the site or participate in any head-to-head or tournament skill challenges. You agree to only participate in the skill challenges only after you have determined in good-faith that you are in compliance with state, local and other governing laws and regulations.
+
+         Participation within the United States of America (U.S.)
+         Participation in fee-based tournaments for prizes is prohibited in the following U.S. states, without limitation: Alaska, Arizona, Delaware, Iowa, Maryland, Tennessee, Vermont. The foregoing list shall not be construed to imply or suggest that Your participation in Skill Challenges from an unlisted state is legal under any applicable laws or regulations. VOID WHERE PROHIBITED OR RESTRICTED BY LAW.
+
+         Participation outside the U.S.
+         Participation in fee-based tournaments for prizes may be prohibited in your jurisdiction and it is your sole responsibility to ensure compliance with such laws. VOID WHERE PROHIBITED OR RESTRICTED BY LAW.
+
+         You agree to hold GamerWall LLC harmless from any liability such that we cannot be held liable if laws applicable to you restrict or prohibit your participation in any skill challenge or contests arranged and established through the site or otherwise. We make no representations or warranties, implicit or explicit, as to Your legal right to participate in any skill challenge facilitated nor shall any person affiliated, or claiming affiliation with GamerWall LLC, have authority to make such representations or warranties.
+
+          </p>
+          <h3>License to Use Website</h3>
+          <p>
+          Unless otherwise stated, The GamerWall LLC and/or its licensors own the intellectual property rights in the website and material on the website.  Subject to the license below, all these intellectual property rights are reserved.
+
+          You may view, download for caching purposes only, and print pages or other content from the website for your own personal use, subject to the restrictions set out below and elsewhere in these terms and conditions.  
+          </p>
+          <p>You must not:</p>
+          <ul>
+            <li>republish material from this website (including republication on another website);</li>
+            <li>sell, rent or sub-license material from the website;</li>
+            <li>show any material from the website in public;</li>
+            <li>reproduce, duplicate, copy or otherwise exploit material on this website for a commercial purpose;</li>
+            <li>edit or otherwise modify any material on the website; or</li>
+            <li>redistribute material from this website except for content specifically and expressly made available for redistribution.</li>
+            </ul>
+            <h3>Acceptable Use</h3>
+            <p>
+            You must not use this website in any way that causes, or may cause, damage to the website or impairment of the availability or accessibility of the website; or in any way which is unlawful, illegal, fraudulent or harmful, or in connection with any unlawful, illegal, fraudulent or harmful purpose or activity.
+
+            You must not use this website to copy, store, host, transmit, send, use, publish or distribute any material which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit or other malicious computer software.
+
+            You must not conduct any systematic or automated data collection activities (including without limitation scraping, data mining, data extraction and data harvesting) on or in relation to this website without The GamerWall LLC’s express written consent.
+
+            You must not use this website to transmit or send unsolicited commercial communications.
+
+            You must not use this website for any purposes related to marketing without The GamerWall LLC’s express written consent.
+            </p>
+            <h3>Restricted Access</h3>
+            <p>
+            Access to certain areas of this website is restricted.  The GamerWall LLC reserves the right to restrict access to other areas of this website, or indeed this entire website, at The GamerWall LLC’s discretion.
+
+If The GamerWall LLC provides you with a user ID and password to enable you to access restricted areas of this website or other content or services, you must ensure that the user ID and password are kept confidential.  
+
+The GamerWall LLC may disable your user ID and password in The GamerWall’s sole discretion without notice or explanation.
+
+
+            </p>
+            <h3>User Content</h3>
+            <p>
+            In these terms and conditions, “your user content” means material (including without limitation text, images, audio material, video material and audio-visual material) that you submit to this website, for whatever purpose.
+
+You grant to The GamerWall LLC a worldwide, irrevocable, non-exclusive, royalty-free license to use, reproduce, adapt, publish, translate and distribute your user content in any existing or future media.  You also grant to The GamerWall LLC the right to sub-license these rights, and the right to bring an action for infringement of these rights.
+
+Your user content must not be illegal or unlawful, must not infringe any third party's legal rights, and must not be capable of giving rise to legal action whether against you or The GamerWall LLC or a third party (in each case under any applicable law).  
+
+You must not submit any user content to the website that is or has ever been the subject of any threatened or actual legal proceedings or other similar complaint.
+
+The GamerWall LLC reserves the right to edit or remove any material submitted to this website, or stored on The GamerWall LLC’s servers, or hosted or published upon this website.
+
+Notwithstanding The GamerWall LLC’s rights under these terms and conditions in relation to user content, The GamerWall LLC does not undertake to monitor the submission of such content to, or the publication of such content on, this website.
+
+            </p>
+            <h3>No Warranties</h3>
+            <p>
+           This website is provided “as is” without any representations or warranties, express or implied.  The GamerWall LLC makes no representations or warranties in relation to this website or the information and materials provided on this website.  
+ 
+        </p>
+        <p>
+        Without prejudice to the generality of the foregoing paragraph, The GamerWall LLC does not warrant that:
+        </p>
+        <ul>
+          <li>this website will be constantly available, or available at all; or</li>
+          <li>the information on this website is complete, true, accurate or non-misleading.</li>
+        </ul>
+        <p>
+       Nothing on this website constitutes, or is meant to constitute, advice of any kind. 
+
+        </p>
+        <h3>Limitations of Liability</h3>
+            <p>
+           
+The GamerWall LLC will not be liable to you (whether under the law of contact, the law of torts or otherwise) in relation to the contents of, or use of, or otherwise in connection with, this website:
+<ul>
+              <li>for any indirect, special or consequential loss; or</li>
+              <li>for any business losses, loss of revenue, income, profits or anticipated savings, loss of contracts or business relationships, loss of reputation or goodwill, or loss or corruption of information or data.</li>
+            </ul>
+
+            </p>
+            <h3>Exceptions</h3>
+            <p>
+            Nothing in this website disclaimer will exclude or limit any warranty implied by law that it would be unlawful to exclude or limit; and nothing in this website disclaimer will exclude or limit The GamerWall LLC’s liability in respect of any:
+            </p>
+            <ul>
+              <li>death or personal injury caused by The GamerWall LLC’s negligence;</li>
+              <li>fraud or fraudulent misrepresentation on the part of The GamerWall LLC; or</li>
+              <li>matter which it would be illegal or unlawful for The GamerWall LLC to exclude or limit, or to attempt or purport to exclude or limit, its liability. </li>
+            </ul>
+            <h3>Reasonableness</h3>
+            <p>
+          By using this website, you agree that the exclusions and limitations of liability set out in this website disclaimer are reasonable.  
+
+If you do not think they are reasonable, you must not use this website.
+
+            </p>
+            <h3>Other Parties</h3>
+            <p>
+           You accept that, as a limited liability entity, The GamerWall LLC has an interest in limiting the personal liability of its officers and employees.  You agree that you will not bring any claim personally against The GamerWall LLC’s officers or employees in respect of any losses you suffer in connection with the website.
+
+Without prejudice to the foregoing paragraph,] you agree that the limitations of warranties and liability set out in this website disclaimer will protect The GamerWall LLC’s officers, employees, agents, subsidiaries, successors, assigns and sub-contractors as well as The GamerWall LLC. 
+
+
+            </p>
+            <h3>Unenforcable Provisions</h3>
+            <p>
+            If any provision of this website disclaimer is, or is found to be, unenforceable under applicable law, that will not affect the enforceability of the other provisions of this website disclaimer.
+            </p>
+            <h3>Indemnity</h3>
+            <p>
+            You hereby indemnify The GamerWall LLC and undertake to keep The GamerWall LLC indemnified against any losses, damages, costs, liabilities and expenses (including without limitation legal expenses and any amounts paid by The GamerWall LLC to a third party in settlement of a claim or dispute on the advice of The GamerWall LLC’s legal advisers) incurred or suffered by The GamerWall LLC arising out of any breach by you of any provision of these terms and conditions, or arising out of any claim that you have breached any provision of these terms and conditions.
+
+            </p>
+            <h3>Breaches of these Terms and Conditions</h3>
+            <p>
+           Without prejudice to The GamerWall LLC’s other rights under these terms and conditions, if you breach these terms and conditions in any way, The GamerWall LLC may take such action as The GamerWall LLC deems appropriate to deal with the breach, including suspending your access to the website, prohibiting you from accessing the website, blocking computers using your IP address from accessing the website, contacting your internet service provider to request that they block your access to the website and/or bringing court proceedings against you.
+
+            </p>
+            <h3>Variation</h3>
+            <p>
+            The GamerWall LLC may revise these terms and conditions from time-to-time.  Revised terms and conditions will apply to the use of this website from the date of the publication of the revised terms and conditions on this website.  Please check this page regularly to ensure you are familiar with the current version.
+
+            </p>
+            <h3>Assignment</h3>
+            <p>
+            The GamerWall LLC may transfer, sub-contract or otherwise deal with The GamerWall LLC’s rights and/or obligations under these terms and conditions without notifying you or obtaining your consent.
+
+You may not transfer, sub-contract or otherwise deal with your rights and/or obligations under these terms and conditions.   
+
+            </p>
+            <h3>Severability</h3>
+            <p>
+           If a provision of these terms and conditions is determined by any court or other competent authority to be unlawful and/or unenforceable, the other provisions will continue in effect.  If any unlawful and/or unenforceable provision would be lawful or enforceable if part of it were deleted, that part will be deemed to be deleted, and the rest of the provision will continue in effect. 
+
+            </p>
+            <h3>Entire Agreement</h3>
+            <p>
+            These terms and conditions, together with our Privacy Policy, constitute the entire agreement between you and The GamerWall LLC in relation to your use of this website, and supersede all previous agreements in respect of your use of this website.
+
+            </p>
+            <h3>Legal Jurisdiction</h3>
+            <p>
+            These terms and conditions will be governed by and construed in accordance with The GamerWall LLC’s local jurisdiction, and any disputes relating to these terms and conditions will be subject to the non-exclusive jurisdiction of the courts of Harris County.
+            </p>
+            <h3>Contact</h3>
+            <p>You can contact The GamerWall LLC by:</p>
+            <p>Address: 16518 House Hahl Rd. Cypress, TX 77433</p>
+            <p>Phone: 832.474.4981</p>
+            <p>Email: support@thegamerwall.com</p>
+            <p>Hours of operation: 8-6 CST</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-flex fade" id="wagerWallRules">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="challenge-form-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="whatIsLabel">GamerWall Rules</h4>
+      </div>
+      <div class="modal-body betaScroll">
+           
+           
+           <h3>Reporting Results and Cancelations</h3>
+           <p>
+           After a player has reported a wager result, the other player will have 1 hour to verify or dispute the
+
+           wager. If the result is not verified or disputed, the system will automatically grade the wager based
+
+           on the initial wager report. If no match result is received within 2 hours, the wager will be
+
+           considered null and void, and both players will be refunded. 
+           </p>
+           
+           <h3>General Site Rules</h3>
+           <p>
+           Rules apply to all matches unless agreed upon by both players
+
+           Any rules not stated in the “Pre-Wager Rules” will not be considered in the event of a dispute.
+
+           “Glitches” used in gameplay could lead to an unfavorable decision in the event of a dispute.
+
+           Custom Rosters and Custom Players are not allowed unless specifically states in the “Pre-Wager
+
+           Rules”
+
+           Guest play is not allowed unless otherwise specified in the “Pre-Wager Rules” or in communication
+
+           with opponent via GamerWall messaging.
+
+           If lag is present during gameplay the game must be exited at the start of the game or at a point in the
+
+           game where neither player has a clear advantage. If you continue to play with lag, it will not be
+
+           considered in any dispute. Intentional lagging will be considered cheating.
+
+           Any point spreads must be mutually agreed to via GamerWall messaging or in the “Pre-Wager Rules”.
+
+           If both players do not agree, and a dispute is made, the wager will be considered a tie and both
+
+           players will be refunded their money less the GamerWall Fee.
+           </p>
+            <h3>Disputes</h3>
+            <p>
+           After a match is completed and one player has verified the match outcome, the other player will have
+
+           the option to dispute the outcome. For any dispute to be considered, VIDEO EVIDENCE must be
+
+           submitted. If a game is continued after a Rule or Settings violation, the dispute will not be
+
+           considered. If you wait until your opponent has an advantage before exiting the game, your dispute
+
+           will not be considered.
+
+           There are no automatic victories on The GamerWall. You cannot win a wager that has not been
+
+           played. If you intentionally exit a match while losing or the game is tied and you cannot show
+
+           evidence of wrongdoing by the other player, you will lose the wager.
+
+           We take honesty and integrity very seriously at The GamerWall, if your account is consisntely
+
+           appearing in disputes or complaints, we will take action up to fining and/or suspending your
+
+           account. Providing false information whether in game or in dispute in order to gain an advantage
+
+           will be enforced by the full extent of the law.
+            </p>
+            <h3>Cheating</h3>
+            <p>
+            If a rule or setting has been broken and the match is deemed close (1 score, 1 run, 1 goal, tied,
+
+            etc)and as long as the game is exited immediately, the offending player will concede the wager. If the
+
+            match is played past the point of the violation then the match will be considered a draw and players
+
+            will be refunded their money less GamerWall’s fee.
+            </p>
+            <h3>Decisions</h3>
+            <p>
+            All rulings by GamerWall are considered final and binding. We take cheating seriously and will have
+
+            a very low tolerance for such behavior. If you do not consent to The GamerWall’s decision authority,
+
+            do NOT wager.
+            </p>
+            <h3>Disconnections</h3>
+            <p>
+            In the event of a disconnection, it is incumbent on the players to start a new game, add the score and
+
+            time from the disconnected game, and finish the game. If you continue to play past the point of the
+
+            disconnected game, the final score will be considered valid. All point spreads will be considered with
+
+            the disconnected game.
+
+            If you get disconnected and start a new game and there is an issue with where the last game left off
+
+            (points, time, yardline, etc) the game must be exited immediately. You must provide evidence to The
+
+            GamerWall and we will make a decision based on that evidence.
+
+            Disconnections are frequently used to gain an advantage, we consider this in the same light as
+
+            cheating. If a player does not make a good faith effort to continue a disconnected game and he was at
+
+            a disadvantage, he MAY forfeit the match.
+
+            Likewise, excessive grieving can be used frequently as an advantage. If you are found to be
+
+            excessively grieving it can result in an unfavorable decision in regards to disputes.
+            </p>
+            <h3>Basic Game Rules</h3>
+            <p>
+            Unless otherwise states in “Pre-Wager Rules” the following will be enforced for games:
+            </p>
+            <p>Madden</p>
+            <ul>
+              <li>Any blocked FGs or PATs will be added to the final score</li>
+              <li>No blocking punts</li>
+              <li>No fake punts or field goals (rule void if attempted and failed)</li>
+              <li>No onside kicks except in situations deemed reasonable by The GamerWall</li>
+              <li>Pausing the game to gain an advantage is strictly prohibited</li>
+              <li>Fatigue is on</li>
+              <li>Even Teams Off</li>
+              <li>Chew Clock is Legal</li>
+              <li>No custom playbooks</li>
+              <li>NO NANO BLITZES!</li>
+            </ul>
+            <p>NBA2k</p>
+            <ul>
+              <li>Efforts to draw fouls using un-reasonable pump fakes will be considered a rules violation.</li>
+              <li>If you pause timer runs out when you are tied or losing, you will concede the wager.
+
+            Exceptions to this rule can occur when the pause timer runs out while a player is attempting
+
+            to gather evidence (that evidence must be submitted and valid).</li>
+            </ul>
+            <p>FIFA</p>
+            <ul>
+              <li>If the game is a draw, a new game must be started and played.</li>
+            </ul>
+          
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal modal-flex fade" id="privacy">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="challenge-form-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="whatIsLabel">Privacy Statement</h4>
+      </div>
+      <div class="modal-body betaScroll">
+              <p>
+              Your privacy is important to The GamerWall LLC.  This privacy statement provides information about the personal information that The GamerWall LLC collects, and the ways in which The GamerWall LLC uses that personal information.
+              </p>
+              <h3>Personal information collection</h3>
+              <p>
+              The GamerWall LLC may collect and use the following kinds of personal information: 
+              </p>
+              <ul>
+                  <li>information about your use of this website </li>
+                  <li>information that you provide using for the purpose of registering with the website (including but not limited to your full legal name, e-mail address, birth date, gender, zip code, occupation, industry, and personal interests.</li>
+                  <li>information about transactions carried out over this website </li>
+                  <li>information that you provide for the purpose of subscribing to the website services </li>
+                  <li>any other information that you send to The GamerWall LLC</li>
+                </ul>
+              <h3>Using personal information</h3>
+              <p>
+              Using personal information 
+              </p>
+              <ul>
+                  <li>administer this website</li>
+                  <li>personalize the website for you</li>
+                  <li>enable your access to and use of the website services</li>
+                  <li>publish information about you on the website</li>
+                  <li>send to you products that you purchase</li>
+                  <li>supply to you services that you purchase</li>
+                  <li>send to you statements and invoices</li>
+                  <li>collect payments from you</li>
+                  <li>send you marketing communications</li>
+                </ul>
+              <p>
+            Where The GamerWall LLC discloses your personal information to its agents or sub-contractors for these purposes, the agent or sub-contractor in question will be obligated to use that personal information in accordance with the terms of this privacy statement. 
+
+            In addition to the disclosures reasonably necessary for the purposes identified elsewhere above, The GamerWall LLC may disclose your personal information to the extent that it is required to do so by law, in connection with any legal proceedings or prospective legal proceedings, and in order to establish, exercise or defend its legal rights.
+            </p>
+                <h3>Securing your data</h3>
+                <p>
+              The GamerWall LLC will take reasonable technical and organizational precautions to prevent the loss, misuse or alteration of your personal information. 
+
+              The GamerWall LLC will store all the personal information you provide on its secure servers. 
+
+              Information relating to electronic transactions entered into via this website will be protected by encryption technology. 
+                </p>
+                <h3>Cross-border data transfers</h3>
+                <p>
+                Information that The GamerWall LLC collects may be stored and processed in and transferred between any of the countries in which The GamerWall LLC operates to enable the use of the information in accordance with this privacy policy.
+
+                In addition, personal information that you submit for publication on the website will be published on the internet and may be available around the world.
+
+                You agree to such cross-border transfers of personal information.
+                </p>
+                <h3>Updating this statement</h3>
+                <p>
+                The GamerWall LLC may update this privacy policy by posting a new version on this website.  
+
+                You should check this page occasionally to ensure you are familiar with any changes.
+                </p>
+                <h3>Other websites</h3>
+                <p>
+                This website is provided “as is” without any representations or warranties, express or implied.  The GamerWall LLC makes no representations or warranties in relation to this website or the information and materials provided on this website.  
+            </p>
+                <h3>Contact The GamerWall LLC</h3>
+                <p>
+                If you have any questions about this privacy policy or The GamerWall LLC’s treatment of your personal information, please write by email to support@thewagerwall.com
+                </p>
+                
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- What is the wager wall popup -->
+<div class="modal modal-flex fade" id="whatisthewagerwall">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="challenge-form-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="whatIsLabel">What is the Wager Wall?</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          We allow e-sports players to “Put Their Money Where Their Mouth Is”.  If you crave competition and think you can take on the best, you come to The Wagerwall.  We feature 1v1 wagers in your favorite sports and e-sports games.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- How it works pop up -->
+<div class="modal modal-flex fade" id="howitworks">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="challenge-form-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="whatIsLabel">How Does It Work?</h4>
+      </div>
+      <div class="modal-body">
+        <p>
+          You have two choices.  You can challenge another player directly or post an “Open” Wager for anyone to take.  The players meet in an agreed upon online location and play their game.  They report the match results, and the funds are distributed.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Challenge -->
+<div class="modal modal-flex fade" id="challenge" tabindex="-1" role="dialog" aria-labelledby="challengeLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="challenge-form-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="whatIsLabel">Create Wager</h4>
+      </div>
+      <div class="modal-body">
+<form>
+    <div class = "challenge-form">
+      <div class="wagerInputOptionsContainer">
+        <input type="radio" name="gender" value="male">   User Wager &nbsp;&nbsp;&nbsp;
+      </div>
+      <div class="wagerInputOptionsContainer">
+        <input type="radio" name="gender" value="female">   Open Wager
+      </div>
+      <p>Opponent</p>
+      <input type="text" name="lastname" placeholder="User"><br>
+      <p>Wager Amount (USD)</p>
+      <input type="text" name="wagerAmount" placeholder="$0.00"><br>
+      <table style="width:100%">
+      <tr>
+        <td>Console</td>
+        <td>Game</td> 
+      </tr>
+      <tr>
+        <td>
+            <select>
+              <option value="XBOX">XBOX</option>
+              <option value="PC">PC</option>
+              <option value="Wii">Wii</option>
+              <option value="PlayStation">PlayStation</option>
+            </select>
+        </td>
+        <td>
+            <select>
+              <option value="FIFA">FIFA16</option>
+              <option value="Madden16">Madden</option>
+              <option value="2k16">NBA 2k16</option>
+              <option value="RocketLeagues">RocketLeagues</option>
+            </select>
+          </td> 
+      </tr>
+    </table>
+  <div>
+</form>
+      </div>
+      <div class="challenge-form-footer">
+        <button type="button" class="btn btn-red" data-dismiss="modal">Create Wager</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Challenge End -->
+<div class="modal modal-flex fade" id="whatIs" tabindex="-1" role="dialog" aria-labelledby="whatIsLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="whatIsLabel">What is the Wager Wall?</h4>
+      </div>
+      <div class="modal-body">
+        <p>The Wager Wall is the world’s first peer-to-peer (P2P) betting site.  Through betting peer-to-peer the standard 
+        10% charged by a traditional bookkeeper can be circumvented allowing bettors to keep more money in their pockets when 
+        the game doesn’t go their way.  This is a site created of the bettors, by the bettors, for the bettors!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-red" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-flex fade" id="howDoes" tabindex="-1" role="dialog" aria-labelledby="howDoesLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="howDoesLabel">How does it work?</h4>
+      </div>
+      <div class="modal-body">
+        <p>The concept is simple: If you think a particular team will win the game, you create a ticket and post a bet on The Wager Wall.
+        If another user sees that posted bet and thinks the opponent will win, they can take your bet.   I.e. if you think Dallas will 
+        win by 7 points over New England, you fill out a ticket and post it on the Wall for the world to see.  If a New England fan wants 
+        to take NE +7, they can take your bet off the wall and they now have some skin in the game. Think Craigslist for Bettors.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-red" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-flex fade" id="betting101" tabindex="-1" role="dialog" aria-labelledby="betting101Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="betting101Label">Betting 101</h4>
+      </div>
+      <div class="modal-body">
+        <h4>TYPES OF SPORTS WAGERS (CURRENTLY) AVAILABLE ON THE WAGER WALL</h4>
+        <p><b>POINTSPREAD: </b>The most popular sports bets are based on the pointspread. The pointspread represents the margin 
+        of points in which the favored team must win by to “cover the spread.” Bets on the pointspread are usually offered at
+        11 to 10 odds.  For example, a player must bet $11 to win $10 for a total payout of $21 or $110 to win $100.</p>
+        <p><b>MONEY LINE:</b> The money line represents the odds of a team winning the game outright without the use of
+        the pointspread. The money line is expressed as a 3-digit number. For example -150 means a player must bet $150 for
+        every $100 he wishes to win, $15 for every $10 and multiples thereof.</p>
+        <p><b>TOTALS:</b> The combined amount of runs, points or goals scored by both teams during the game, including overtime.
+        <br/>---Over– A sports bet in which the player wagers that the combined point total of two teams will be more than
+        a specified total.
+        <br/>---Under – The player bets that the total points scored by two teams will be less than a certain figure.</p>
+        <h4>GLOSSARY OF SPORTS BETTING TERMS</h4>
+        <p><b>Action</b> – A sports wager of any kind; a bet.</p>
+        <p><b>Added Game</b> – A game not part of the typical menu of wagering offerings, often posted as an accommodation to patrons.</p>
+        <p><b>Chalk</b> – The favorite.</p>
+        <p><b>Cover</b> – Winning by more than the pointspread.</p>
+        <p><b>Dime</b> – A $1,000 sports wager.</p>
+        <p><b>Dog</b> – The team perceived to be most likely to lose. Short for underdog.</p>
+        <p><b>Favorite</b> – The team considered most likely to win an event.</p>
+        <p><b>First-half bet</b> – A bet placed on the score in the  first half of the game only.</p>
+        <p><b>Future</b> – Odds that are posted well in advance on the winner of major events, including the Pro Football
+        Championship, the Pro Basketball Championship and the Pro Baseball Championship.</p>
+        <p><b>Half-time bet</b> – A bet placed on scoring in the second half of a game only.</p>
+        <p><b>Handle</b> - The total amount of bets taken.</p>
+        <p><b>Laying the points/price</b> – Betting the favorite by giving up points.</p>
+        <p><b>Line</b> – The current odds or pointspread on a particular event.</p>
+        <p><b>Listed pitchers</b> – A baseball bet placed only if both of the pitchers scheduled to start a game 
+        actually start. If they don’t, the bet is deemed “No Action” and refunded.</p>
+        <p><b>Longshot</b> – A team perceived to be unlikely to win.</p>
+        <p><b>Middle</b> – To win both sides of a game; wagering on the underdog at one pointspread and the favorite at 
+        a different pointspread and winning both sides. For example, if the player bets the underdog +4 ½ and the favorite -3 ½ 
+        and the favorite wins by 4, he has middled the book and won both bets.</p>
+        <p><b>Money line</b> - Odds expressed in terms of money. With money odds, whenever there is a minus (-) the player 
+        lays that amount to win $100; where there is a plus (+) the player wins that amount for every $100 wagered.</p>
+        <p><b>Nickel</b> – A $500 sports wager.</p>
+        <p><b>No action</b> – A wager in which no money is lost or won and the original bet amount is refunded.</p>
+        <p><b>Opening line</b> - The earliest line posted for a particular sporting event.</p>
+        <p><b>Parlay</b> – A single bet that links together two or more wagers; to win the bet, the player must win all the
+        wagers in the parlay. If the player loses one wager, he loses the entire bet.  However, if he wins all the wagers in
+        the parlay, he wins a higher payoff than if he had placed the bets separately.</p>
+        <p><b>Pick or Pick ‘em</b> – A game when neither team is favored</p>
+        <p><b>Price</b> – The odds or pointspread.</p>
+        <p><b>Prop (Proposition) Bet</b> – A bet that focuses on the outcome of events within a given game. Props are often
+        offered on marquee games of great interest. These include Sunday and Monday night pro football games, various
+        high-profile college football games, major college bowl games and playoff and championship games. An example of a
+        prop bet is “Which team will score the first touchdown?”</p>
+        <p><b>Push</b> – When the contest ends with no winner or loser for wagering purposes; a tie for wagering purposes.</p>
+        <p><b>Round Robin</b> – A series of parlays.</p>
+        <p><b>Run line</b> – In baseball, a spread used instead of the money line.</p>
+        <p><b>Sides</b> – The two teams playing; the underdog and the favorite.</p>
+        <p><b>Straight bet</b> – An individual wager on a game or event that will be determined by a pointspread or money line</p>
+        <p><b>Straight-up</b> – Winning the game without any regard to the pointspread; a money-line bet.</p>
+        <p><b>Take the points</b> – Betting the underdog and receiving its advantage in the pointspread.</p>
+        <p><b>Take the price</b> – Betting the underdog and accepting money odds.</p>
+        <p><b>Teaser</b> – A type of parlay in which the pointspread or total of each individual play is adjusted. The price of
+        moving the pointspread (teasing) is lower payoff odds on winning wagers.</p>
+        <p><b>Tie</b> – A wager in which no money is lost or won because the teams’ scores were equal to the number of points 
+        in the given pointspread.</p>
+        <p><b>Underdog</b> – The team perceived to be most likely to lose. Also known as the “dog.”</p>
+        <p><b>Vigorish</b> - The bookmaker’s commission; also known as juice.  (****FLAT $1.00 IN Btc everytime****)</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-red" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-flex fade" id="faq" tabindex="-1" role="dialog" aria-labelledby="faqLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="faqLabel">FAQ's</h4>
+      </div>
+      <div class="modal-body">
+        <p><b>1. Why Bitcoin?</b><br/>
+        We chose Bitcoin to enable bettors from all parts of the world to get in on the action. Through bitcoin, a bettor in
+        Melbourne, Australia can seamlessly post a bet on a European Soccer Match and have it be taken by a bettor in Oslo, Norway.</p>
+        <p>
+        <p><b>2. What is Bitcoin?</b><br/>
+        This video does a much better job than we can of describing it. Check it out here: 
+        <a href="https://www.youtube.com/watch?v=Um63OQz3bjo" target="_blank">https://www.youtube.com/watch?v=Um63OQz3bjo</a></p>
+        <p><b>3. Will more sports ever be listed on The Wager Wall?</b><br/>
+        With your help, Yes!   We started with the most popular sports but will add as many as possible
+        once we get traffic on the site.  When logged in you will always have the ability to message us
+        here at The Wager Wall office and request another sport be listed.</p>
+        <p><b>3. Will I be able to bet on things other than sports?</b><br/>
+        Yes again. We plan on adding entertainment, politics, and any category the masses request.</p>
+        <p><b>4. If I post a bet and no one picks it up, will I be refunded?</b><br/>
+        Yes, once the game has started if your bet was not picked off the wall, you will be refunded instantly.</p>
+        <p><b>5. How much do you charge for your service?</b><br/>
+        To create a ticket and post on the wall is free. We charge the equivalent of USD$1.00 in Bitcoin to both the bettor and bettee
+        once the bet is completed. The purpose of this site is not to make money off the bettors but rather to SAVE money for the 
+        (not so lucky) bettors.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-red" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-flex fade" id="disclaimer" tabindex="-1" role="dialog" aria-labelledby="disclaimerLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="disclaimerLabel">Disclaimer</h4>
+      </div>
+      <div class="modal-body">
+       <p>The Wager Wall does not promote or encourage illegal or underage gambling, or gambling to persons who reside in jurisdictions where 
+       gambling is considered unlawful. In those instances, this site is presented for informational and entertainment purposes only. By 
+       entering The Wager Wall you agree that you are aware of the terms outlined herein and reside in an area where it is not unlawful to 
+       gamble online.  Please be advised that laws related to betting are different in various jurisdictions.  It is up to the individual 
+       looking to participate in online betting to fully research laws related to betting wherever they are.  That also means researching 
+       information outside of this Web site.   You shall indemnify and hold harmless any and all owners, directors, officers, managers, 
+       employees, agents, partners, vendors, and/or affiliates against any and all harm and damages suffered as a result of using this site.  
+       TheWagerWall.com does not accept any responsibility and/or liability for any losses and/or damages sustained by anyone using services 
+       linked on this site or following the information provided on the site or via e-mail correspondence.</p>
+       <p>WARNING: Betting can be very risky and users should only speculate with money that they can comfortably afford to lose and should
+       ensure that the risks involved are fully understood, seeking advice if necessary.  Careless gambling can result in the loss of 
+       substantial sums of money. For further information on responsible gambling, or if you think you may have a gambling problem, please 
+       <a href="http://www.bettorsanonymous.org" target="_blank">click here.</a></p>
+       <p>For questions about TheWagerWall, please contact info@thewagerwall.com</p>
+       <p>If you have a questions regarding your account or recent play, please contact Customer Service at info@thewagerwall.com</p>
+       <p>TheWagerWall, TheWagerWall logo and all related marks are trademarks.  All rights reserved.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-red" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+	  resizeSections();
+  });
+
+  $(window).resize(function(){
+	  resizeSections();
+  });
+
+  function resizeSections(){
+	  var windowHeight = $(window).height();
+	  $('.content_section').each(function(index){
+		  if(windowHeight > $(this).height()){
+			  $(this).height(windowHeight);
+		  }
+	  });
+  }
+var $howitworksAnimation = $('.howitworksAnimation');
+var $whoweareAnimation = $(".whoweareAnimation")
+var $window = $(window)
+$window.on('scroll', checkIfInView);
+function checkIfInView () {
+  var windowHeight = $window.height();
+  var window_top_position = $window.scrollTop();
+  var window_bottom_position = (window_top_position + windowHeight);
+
+  $.each($howitworksAnimation, function() {
+    var $element = $(this);
+    var elementHeight = $element.outerHeight();
+    var elementTop = $element.offset().top;
+    var elementBottom = (elementTop + elementHeight);
+    if ((elementBottom>= window_top_position) && (elementTop <= window_bottom_position)) {
+      $element.addClass("inView");
+    }
+    else {
+      $element.removeClass("inView");
+    }
+  });
+
+    $.each($whoweareAnimation, function() {
+      var $element = $(this);
+      var elementHeight = $element.outerHeight();
+      var elementTop = $element.offset().top;
+      var elementBottom = (elementTop + elementHeight);
+      if ((elementBottom>= window_top_position) && (elementTop <= window_bottom_position)) {
+        $(".webappscreenAnimation").addClass("laptopView");
+        $(".companybriefAnimation").addClass("briefView");
+      }
+      else {
+        $(".webappscreenAnimation").removeClass("laptopView");
+        $(".companybriefAnimation").removeClass("briefView");
+      } 
+    });
+}
+var $games = $(".gameScreenContainer");
+var __OBJECTS = [];
+$games.each(function() {
+  __OBJECTS.push($(this));
+});
+
+addPositioningClasses();
+
+function addPositioningClasses() {
+    var $card = __OBJECTS.shift();
+    $card.addClass('focusGame');
+    if (__OBJECTS.length) {
+         __OBJECTS.push($card);
+        setTimeout(addPositioningClasses, 5000)
+        setTimeout(function() {
+           $card.removeClass('focusGame');
+        }, 5000)
+    }
+}
+
+
+
+  // $.backstretch([
+  //     "<?php echo $this->basepath();?>/images/login/wagerWallController.jpg"
+    // , "<?php echo $this->basepath();?>/images/login/hockey.jpg"
+    // , "<?php echo $this->basepath();?>/images/login/baseball.jpg"
+    // , "<?php echo $this->basepath();?>/images/login/football.jpg"
+    // , "<?php echo $this->basepath();?>/images/login/basketball.jpg"
+    // , "<?php echo $this->basepath();?>/images/login/soccer.jpg"
+  //   ],
+  // {duration: 10000, fade: 750});
+
+  
+  function scrollToAnchor(anchorId){
+    var body = $("html, body");
+    body.animate({scrollTop: $('.home-tab-' + anchorId).offset().top},'slow');
+  }
+
+  $(document).ready(function(){
+    $('#login').popup({
+      transition: 'ease-in-out 0.3s',
+      vertical: 'top'
+    });
+
+    $('#forgotPassword').popup({
+      transition: 'ease-in-out 0.3s',
+      vertical: 'top'
+    });
+
+    $('#forgotSent').popup({
+      transition: 'ease-in-out 0.3s',
+      vertical: 'top'
+    });
+
+    $('#newUser').popup({
+      transition: 'ease-in-out 0.3s',
+      vertical: 'top'
+    });
+    
+    $('#landingPageWager').click(function(){
+      $('#newUser').popup('show');
+    });
+    $('#createAccountBtn').click(function(){
+      $('#newUser').popup('show');
+    });
+
+    $('#open_new_account').click(function(){
+      $('#newUser').popup('show');
+    });
+
+    $('#open_new_account_forgot').click(function(){
+      $('#forgotPassword').popup('hide');
+      $('#newUser').popup('show');
+    });
+
+    $('#forgot_password').click(function(){
+      $('#login').popup('hide');
+      $('#forgotPassword').popup('show');
+    });
+
+    $('#exit_forgot').click(function(){
+    	$('#forgotPassword').popup("hide");
+    });
+
+    $('#exit_newuser').click(function(){
+    	$('#newUser').popup("hide");
+    });
+
+    $('#exit_login').click(function(){
+    	$('#login').popup("hide");
+    });
+  });
+</script>
+
+<?php 
+if(isset($failedLogin) && $failedLogin){
+  echo '<script type="text/javascript">
+          $(document).ready(function(){
+            $("#login").popup("show");
+          });
+        </script>';
+}
+if(isset($failedCreate) && $failedCreate){
+  echo '<script type="text/javascript">
+          $(document).ready(function(){
+            $("#newUser").popup("show");
+          });
+        </script>';
+}
+if(isset($failedRemind) && $failedRemind){
+  echo '<script type="text/javascript">
+          $(document).ready(function(){
+            $("#forgotPassword").popup("show");
+          });
+        </script>';
+}
+if(isset($successRemind) && $successRemind){
+  echo '<script type="text/javascript">
+          $(document).ready(function(){
+            $("#forgotSent").popup("show");
+          });
+        </script>';
+}
+?>
+
+<!-- login/index/index End-->

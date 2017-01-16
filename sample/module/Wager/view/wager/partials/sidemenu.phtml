@@ -1,0 +1,225 @@
+<!-- begin SIDE NAVIGATION -->
+<nav class="navbar-side" role="navigation">
+    <div class="navbar-collapse sidebar-collapse collapse">
+        <ul id="side" class="nav navbar-nav side-nav">
+            <!-- begin SIDE NAV USER PANEL -->
+            <li class="side-user hidden-xs">
+                <!-- <p class="welcome">
+                    <i class="fa fa-key"></i> Logged in as
+                </p> -->
+                <p class="name tooltip-sidebar-logout">
+                    <a class="last-name" href="<?php echo $this->url('wager', array('controller'=>'profile'));?>"><?php echo $this->username;?></a>
+                    <br/><a style="color: inherit" class="logout_open" href="#logout" data-toggle="tooltip" data-placement="top" title="Logout">Logout <i class="fa fa-sign-out logout_padding_correct"></i></a>
+                <div id = "userId" style="display:none;"><?php echo $this->userId;?></div>
+                <div id = "username" style="display:none;"><?php echo $this->username;?></div>
+                
+                <div id = "xboxGamertag" style="display:none;"><?php echo $this->xboxGamertag;?></div>
+                <div id = "pSNUsername" style="display:none;"><?php echo $this->pSNUsername;?></div>  
+                <div id="wagersHistoryCount" style="display:none;"><?php echo $this->wagersHistoryCount;?></div>
+                <div id="wagersHistoryCountWins" style="display:none;"><?php echo $this->wagersHistoryCountWins;?></div>
+                <div id="wagersHistoryCountLosses" style="display:none;"><?php echo $this->wagersHistoryCountLosses;?></div>                
+                <div id = "myWagersCount" style="display:none;"><?php echo $this->myWagersCount;?></div>
+                <div id = "unreadMessages" style="display:none;"><?php echo $this->unreadMessages;?></div>
+                <br/><div id='mycredits' style="color: #fff;" ><h3><?php 
+                if($this->myCredits) {
+                    echo '$' . $this->myCredits->availableCredits;
+                } else {
+                    echo 'No Credits';
+                }
+                ?></h3></div>
+                    <!--<br/><a style="color: inherit" class="logout_open" href="#logout" data-toggle="tooltip" data-placement="top" title="Logout"><?php //echo '$' . $this->myCredits->availableCredits;?><i class="fa fa-sign-out logout_padding_correct"></i></a>-->
+                </p>
+                <div class="clearfix"></div>
+            </li>
+            <!-- Mobile Showing Only  -->
+            <li class="visible-xs" style="text-align: center; color:white;background-color: rgba(19, 19, 21, 1);">
+              <div class="name tooltip-sidebar-logout">
+                    <span class="last-name" style="font-size:1.5em;"><?php echo $this->username;?></span>
+                    <br/><a style="color: inherit" class="logout_open" href="#logout" data-toggle="tooltip" data-placement="top" title="Logout">Logout <i class="fa fa-sign-out logout_padding_correct"></i></a>
+                <div id='mycredits' style="color: #fff;" >
+                  <h3>
+                    <?php 
+                      if($this->myCredits) {
+                          echo '$' . $this->myCredits->availableCredits;
+                      } else {
+                          echo 'No Credits';
+                      }
+                      ?>
+                  </h3>
+                </div>
+              </div>
+            </li>
+
+            <!-- end SIDE NAV USER PANEL -->
+            <li>
+                <a id="theWagerWallView" class="active" href="<?php echo $this->url('wager', array('action'=>'index', 'controller' => 'index'));?>">
+                    <i class="fa fa-desktop"></i> The GamerWall
+                </a>
+            </li>
+            <li>
+                <a id="pendingWagersView" class="active" href="<?php echo $this->url('wager', array('action'=>'mywager', 'controller' => 'index'));?>">
+                    <i class="fa fa-dashboard"></i> Pending Wagers<span id="notSeenWagers" class="notificationNumber"></span>
+                </a>
+            </li>
+            <li>
+                <a id="wagerHistoryView" class="active" href="<?php echo $this->url('wager', array('action'=>'wagerhistory', 'controller' => 'index'));?>">
+                    <i class="fa fa-history"></i> Wager History
+                </a>
+            </li>
+            <li>
+              <a id="messagesView" class="active" href="<?php echo $this->url('wager', array('action'=>'index', 'controller'=>'message'));?>">
+                <i class="fa fa-inbox" aria-hidden="true"></i> Messages<span id="unreadInboxMsgs" class="notificationNumber"></span>
+              </a>
+            </li>
+
+            <li>
+              <a id="walletView" class="active" href="<?php echo $this->url('wager', array('action'=>'index', 'controller'=>'wallet'));?>">
+                <i class="fa fa-money"></i> Wallet
+              </a>
+            </li>
+            <li>
+                <a id="profileView" class="active" href="<?php echo $this->url('wager', array('action'=>'index', 'controller' => 'profile'));?>">
+                    <i class="fa fa-user"></i> Profile
+                </a>
+            </li>
+            
+            <?php /*
+              if($this->isAdmin){
+                echo '<li>';
+                  echo '<a class="active" href="' . $this->url('backoffice', array('action'=>'index', 'controller' => 'admin')) . '">';
+                    echo '<i class="fa fa-tasks"></i> Admin';
+                  echo '</a>';
+                echo '</li>';
+              }*/
+            ?>
+        </ul>
+        <!-- /.side-nav -->
+        <div class="legalRoutersContainer">
+              <a class="active" href="<?php echo $this->url('wager', array('action'=>'index', 'controller' => 'terms'));?>">
+               Terms
+              </a>
+              <span>|</span>
+              <a class="active" href="<?php echo $this->url('wager', array('action'=>'privacy', 'controller' => 'terms'));?>">
+               Privacy Statement
+              </a>
+        </div>
+        
+    </div>
+    <!-- /.navbar-collapse -->
+</nav>
+<!-- /.navbar-side -->
+<!-- end SIDE NAVIGATION -->
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#acceptWager').popup({
+        transition: 'ease-in-out 0.3s',
+        vertical: 'top'
+    });
+    $('#declineWager').popup({
+        transition: 'ease-in-out 0.3s',
+        vertical: 'top'
+    });
+    $('#cancelWager').popup({
+        transition: 'ease-in-out 0.3s',
+        vertical: 'top'
+    });
+    $('#reportMatch').popup({
+        transition: 'ease-in-out 0.3s',
+        vertical: 'top'
+    });
+    $('#messageWager').popup({
+        transition: 'ease-in-out 0.3s',
+        vertical: 'top'
+    });
+    $('#madeCCDeposit').popup({
+          transition: 'ease-in-out 0.3s',
+          vertical: 'top'
+    }); 
+
+    $('#writeMessage').popup({
+        transition: 'ease-in-out 0.3s',
+        vertical: 'top'
+    });
+    $('#readMessage').popup({
+          transition: 'ease-in-out 0.3s',
+          vertical: 'top'
+    }); 
+    $('#disputeWager').popup({
+          transition: 'ease-in-out 0.3s',
+          vertical: 'top'
+    });    
+
+    $("#helpView").click(function() {
+      $("#getHelpPopup").removeClass('noshow')
+      $("#getHelpPopup").popup("show")
+      $("#exit_helpPopup").click(function() {
+         $("#getHelpPopup").popup("hide")
+         $("#getHelpPopup").addClass('noshow')
+      })
+    })
+
+    $('#exit_messageWager').click(function(){
+      $('#messageWager').popup("hide");
+    });
+    
+    $('#cancelmessage').click(function(){
+      $('#messageWager').popup("hide");
+    });
+    
+    $('#exit_acceptWager').click(function(){
+      $('#acceptWager').popup("hide");
+    });
+    $('#exit_declineWager').click(function(){
+      $('#declineWager').popup("hide");
+    });
+    $('#exit_cancelWager').click(function(){
+      $('#cancelWager').popup("hide");
+    });
+
+    $('#exit_Match').click(function(){
+      $('#reportMatch').popup("hide");
+    });
+
+    /*$('#exit_wager').click(function(){
+      $('#postWager').popup("hide");
+    });
+    $('#close_wager').click(function(){
+      $('#postWager').popup("hide");
+    }); 
+    
+    $('#exit_rules').click(function(){
+      $('#madeWager').popup("hide");
+    });*/
+        
+    $('#exit_deposit').click(function(){
+      $('#madeCCDeposit').popup("hide");
+    });
+    $('#exit_dispute').click(function(){
+      $('#disputeWager').popup("hide");
+    });  
+ 
+    $('#disputeClose').click(function(){
+      $('#disputeWager').popup("hide");
+    });
+    
+    
+  });
+</script>
+
+<?php 
+if(isset($this->showmakewager) && $this->showmakewager && false){ //remove when done make confirmation popup
+  echo '<script type="text/javascript">
+          $(document).ready(function(){
+            $("#madeWager").popup("show");
+          });
+        </script>';
+}
+if(isset($this->messages)){
+  echo '<script type="text/javascript">
+          $(document).ready(function(){
+               $("#messagewager").html("'.$this->messages.'");
+               $("#messageWager").popup("show");
+          });
+        </script>';
+}
+?>

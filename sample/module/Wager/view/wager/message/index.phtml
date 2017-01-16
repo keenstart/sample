@@ -1,0 +1,94 @@
+<?php echo $this->partial('wager/partials/topmenu.phtml');?>
+<?php echo $this->partial('wager/partials/sidemenu.phtml');?>
+<?php echo $this->partial('wager/partials/talkwall.phtml');?>
+
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/backoffice/index.css');?>
+<?php $this->headLink()->appendStylesheet($this->basePath() . '/css/modules/wager/mywager.css');?>
+ 
+
+<?php echo $this->partial('wager/partials/wager.phtml',  array('newwager' => $newwager,'matchresult'=>$matchresult))?>
+<?php echo $this->partial('wager/message/partials/msgpopup.phtml',  array('message' => $message))?>
+<!-- begin MAIN PAGE CONTENT -->
+<div id="page-wrapper">
+
+    <div class="page-content col-xs-12 col-sm-9 col-md-9">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-title">
+                    <h1>Messages
+                    <small>View your messages:</small>
+                    </h1>
+                   <!--  <ol class="breadcrumb">
+                        <li><i class="fa fa-desktop"></i> <a href="<?php echo $this->url('wager', array('action'=>'index', 'controller' => 'index'))?>">The Wager Wall</a></i>
+                    </ol> -->
+                </div>
+            </div>
+        </div>
+        <div class="pageView" style="display:none;">messagesView</div>
+        <div class="row col-xs-12 col-sm-12 col-md-12 messagesFilters">
+            <div>
+                <div id = "pageOn" style="display:none;">inbox</div>
+                <ul class="messagesOptions nav nav-pills">
+                    <li><a id="inboxMessageBtn">Inbox   <span id="unreadMsgs"></span></a></li>
+                    <li><a id="outboxMessageBtn">Outbox</a></li>
+                </ul>
+            </div>
+            <div class="messagesButtonsContainer">
+                <a id="composeMessageBtn" class="btn btn-success writeMessage_open" href="#writeMessage">Compose</a>
+                <i id="deleteMessageIcon" class="fa fa-trash-o fa-2x" style="color:white;vertical-align:middle;"></i>
+                <!--<button id="markAllMessagesBtn" type="button" class="btn btn-default">Mark All Read</button>-->
+                <!--<i class="fa fa-trash fa-lg" style="color: white" aria-hidden="true"></i>-->
+            </div>
+        </div>
+        <div class="messagesContainer">
+          <div class="col-lg-12 padWagerTable">
+                <ul id="messageList" class="list-group scrollFeature">
+                </ul>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- /.page-content -->
+</div>
+<!-- /#page-wrapper -->
+<!-- end MAIN PAGE CONTENT -->
+<script> 
+$(document).ready(function() {
+    function initialMsgs(url, type, listcount) {
+        var list, direction;
+        var addlist = '';
+        $.ajax({
+                type: "POST",
+                url: url,
+                data:  {type:type,offset:listcount},
+                success: function(data)
+                {
+                     var t = $("#pageOn").html();
+                     if(data.success) {
+                        if(data.count) {
+                           if($("#pageOn").html() === data.pageon) {
+                               direction =data.direction;
+                               $.each(data.msg, function( i,d ) {
+                                   list =  returnMsgHtml(d, direction);
+                                   addlist = addlist + list;
+                               });
+                               $('#messageList').html(addlist);
+                           }
+                       } else {
+                           if(data.append){
+                                $('#messageList').html("");
+                           }
+                       }
+                    } 
+                    else {
+                        $('#messagewager').html(data.messages);
+                        $('#messageWager').popup("show");
+                    }
+                }
+        });
+    }
+
+    initialMsgs("/wager/message/getmsg/", 'inbox', 0);
+
+})
+</script>

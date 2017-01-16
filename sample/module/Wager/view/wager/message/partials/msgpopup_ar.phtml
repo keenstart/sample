@@ -1,0 +1,89 @@
+<div id="writeMessage" class="messagesPopUps">
+    <?php
+      $message->setAttribute('action', $this->url('wager', array('action' => 'send', 'controller' => 'message')));
+      $message->prepare();
+    ?>
+    <div class="row login_popup_box">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="exit_x" id="exit_write">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Compose Wager Message</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                     <?php  echo $this->form()->openTag($message);?>
+                        <fieldset>
+                            <input id="socketId" type="hidden" name="socket_id" value=""/>
+                            <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                <label for="touserId"><?php echo $this->formLabel($message->get('touserId')); ?></label>
+                                <?php echo $this->formElement($message->get('touserId'));?>
+                                <?php echo $this->formelementerrors($message->get('touserId'));?>
+                            </div>
+                            
+                            <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                <label for="subject"><?php echo $this->formLabel($message->get('subject')); ?></label>
+                                <?php echo $this->formElement($message->get('subject'));?>
+                                <?php echo $this->formelementerrors($message->get('subject'));?>
+                            </div>
+                            <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                <label for="subject"><?php echo $this->formLabel($message->get('messages')); ?></label>
+                                <?php echo $this->formElement($message->get('messages'));?>
+                                <?php echo $this->formelementerrors($message->get('messages'));?>
+                            </div>
+                            <br>
+                            <div class="confirmMessageContainer">
+                                    <button id="close_message" type="button" class="btn btn-default btn-lg">Close</button>
+                                    <button id="send_message" type="button" class="btn btn-success btn-lg">Send</button>
+                            </div>
+                        </fieldset>
+                    <?php echo $this->form()->closeTag();?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="readMessage" class="messagesPopUps">
+    <div class="row login_popup_box">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="exit_x" id="exit_read">X</div>
+            <div class="portlet portlet-black">
+                <div class="portlet-heading login-heading">
+                    <div class="portlet-title">
+                        <h4><strong>Received Wager Message</strong>
+                        </h4>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="portlet-body">
+                        <fieldset>
+                            <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                <label>User</label>
+                                <div id="userMsg" class="userInputFields"></div>
+                            </div>
+                            
+                            <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                <label>Subject</label>
+                                <div id="subjectMsg" class="userInputFields"></div>
+                            </div>
+                            
+                            <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                                <label>Message</label>
+                                <p id="messageMsg" class="userInputFields" placeholder="Message received from user..."></p>
+                            </div>
+                            <br>
+                            <!-- Ari Css found in makeMessage.css -->
+                            <div class="confirmMessageContainer">
+                                    <button id="close_reply" type="button" class="btn btn-default btn-lg">Close</button>
+                                    <a id="replyMessageBtn" class="btn btn-success btn-lg writeMessage_open" href="#writeMessage">Reply</a>
+                            </div>
+                        </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

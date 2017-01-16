@@ -1,0 +1,101 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 26, 2016, 4:07:54 PM
+    Author     : garethharris
+*/
+
+div.deposit {
+	color:#FFF;
+   /*  max-width:500px; */
+    margin: auto;
+}
+/* Start Ari's css */
+/* Wallet CSS */
+.paymentTypeOptionsContainer > label {
+  width: 50%;
+}
+#depositBtnContainer {
+	text-align: right;
+}
+.expDateCCcontainer > .expDateOptions {
+	width: 49%;
+	display: inline-block;
+}
+.paypalSecurityContainer {
+	text-align: center; 
+}
+.paypalSecurityContainer > table {
+	display: inline-block;
+	vertical-align: middle;
+}
+.paypalSecurityContainer img {
+	max-height: 3em;
+}
+
+#wagerWalletDepositBtn {
+	text-align: right;
+}
+/* Messages CSS */
+.messagesContainer {
+	float: right;
+	width: 100%;
+}
+.messagesFilters > div {
+	width: 49%;
+	display: inline-block;
+}
+.readMessageBtn {
+	display: inline-block;
+}
+.messagesButtonsContainer {
+	text-align: right;
+}
+.messagesOptions {
+	list-style: none;
+	padding: 5px; 
+	display: inline-block;
+	vertical-align: middle; 
+}
+.messagesOptions li {
+	display: inline; 
+	cursor: pointer;
+}
+.messagesOptions li a {
+	color: #FFF !important; 
+	padding: 10px;
+	text-decoration: none;
+}
+@media (min-width: 768px) {
+	.messagesPopUps {
+    	width: 50%;
+	}
+}
+.messagesPopUps {
+    	margin: 10% auto;
+	}
+
+.messagesPopUps label {
+	display: block;
+}
+.messagesPopUps .userInputFields {
+	width: 100%;
+	min-height: 3em;
+}
+#messageMsg {
+	height: 7em;
+	overflow: auto;
+}
+.confirmMessageContainer {
+	width: 100%;
+	text-align: right;
+}
+.showMessagesPopUps {
+	visibility: visible;
+}
+
+
+/* End Ari's css */

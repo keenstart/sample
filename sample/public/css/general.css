@@ -1,0 +1,245 @@
+@CHARSET "ISO-8859-1";
+
+body{
+  min-width: 300px !important;
+}
+
+h1{
+  color: #FFF;
+}
+.messageDateTime h4, h5 {
+  display: inline;
+}
+.messageUnreadIcon {
+  position: absolute;
+  vertical-align: middle;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #5cb85c;
+  font-size: .5em;
+}
+.messageReadIcon {
+  color: rgba(44,44,44,.1)!important;
+}
+#listDeleteMsg {
+  vertical-align: middle;
+}
+.messageOverview {
+    padding-left: 15px; 
+}
+.dateReceivedMsg {
+  padding-left: 10px;
+}
+
+.logofont a{
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.logo_white{
+  color: #FFF;
+}
+
+.logo_red{
+  color: #D51F27;
+}
+
+.name{
+	overflow: hidden;
+}
+/* App color change black */
+.navbar-top {
+    margin-left: 0;
+    background-color: rgba(19,19,21,1); 
+}
+
+/* .navbar-side,
+.navbar-side .side-nav li.panel {
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #999;
+} */
+
+.navbar-side .side-nav li.panel ul li a,
+.navbar-side .side-nav li.panel ul li a:hover,
+.navbar-side .side-nav li.panel ul li a:focus,
+.navbar-side .side-nav li.panel ul li a:active,
+.navbar-side .side-nav li.panel ul li .active {
+    color: #FFF;
+    background-color: #333;
+}
+/* Ari's css for SideMenu */
+
+.navbar-side .side-nav > li > a.active {
+    background-color: rgba(19,19,21,1);
+}
+
+.navbar-side .side-nav li.panel ul li a.active {
+    background-color: #666;
+}
+
+.navbar-side .side-nav > li > a:hover {
+    color: #FFF;
+    background-color: rgba(44,44,44,1);
+}
+
+.logout_padding_correct{
+  padding-right: 0 !important;
+}
+
+a.list-group-item.active,
+a.list-group-item.active:hover,
+a.list-group-item.active:focus,
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:hover,
+.nav-pills>li.active>a:focus,
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+    border-color: #333;
+    background-color: #333;
+}
+
+.logout-message {
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0,0,0,0.6);
+}
+#acceptWager {
+  width: 80%;
+  margin: 10% auto;
+}
+#wagerDetailsView {
+  display: none;
+  width: 80%;
+  margin: 5% auto;
+}
+/* #wagerDetailsView .portlet-body{
+  height: 35vh;
+} */
+#wagerDetailsView .form-group{
+  width: 49%;
+  display: inline-block; 
+}
+@media(max-width:768px) {
+  #wagerDetailsView .form-group{
+    width: 90%;
+    display: block; 
+  }
+}
+
+/* Start Aris Edits */
+#postWager, #cancelWager, #messageWager, #disputeWager {
+  margin-top: 5%;
+/*   width: 90%;
+  max-width: 750px; */
+/*   left: 50%;
+  transform: translateX(-50%); */
+}
+/* End Ari's edits */
+
+#postWager .portlet{
+  margin-bottom: 0px;
+}
+
+#takeWager{
+  margin-top: 150px;
+  width: 90%;
+  max-width: 750px;
+}
+
+#takeWager .portlet{
+  margin-bottom: 0px;
+}
+
+.post_wager_button, .find_game_button{
+  margin: 5px 10px;
+  padding: 6px 20px !important;
+  height: auto !important;
+  font-family: 'rbn02alt',sans-serif;
+  text-transform: uppercase;
+}
+
+.post_wager_button{
+  background-color: #D51F27 ;
+  opacity: .9;
+  color: white !important;
+  border: thin solid #D51F27;
+}
+
+.post_wager_button:hover, .post_wager_button:active, .post_wager_button:visited {
+  background-color: #D51F27!important;
+  opacity: 1;
+}
+
+.post_wager_button:hover{
+  color: white !important;
+}
+
+.find_game_button{
+  background-color: #d51f27;
+  color: #FFF !important;
+  border: thin solid #CCC;
+}
+
+.find_game_button:hover, .find_game_button:active, .find_game_button:visited, .find_game_button:link{
+  background-color: #d51f27 !important;
+}
+
+.find_game_button:hover{
+  color: #000 !important;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.removeLowerPageTitleMargin{
+  margin-bottom: 0px !important;
+}
+
+.portlet-flat-top{
+  -webkit-border-top-left-radius: 0px !important;
+    -webkit-border-top-right-radius: 0px !important;
+    -moz-border-radius-topleft: 0px !important;
+    -moz-border-radius-topright: 0px !important;
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+.white_text{
+	color: #FFF;
+}
+
+@media(min-width:768px) {
+    #page-wrapper {
+        margin: 50px 0 0 225px;
+        /* padding: 0 30px; */
+        min-height: 100vh;
+        border-left: 1px solid rgba(44,44,44,1);
+    }
+    
+    #postWager, #madeWager, #disputeWager, #messageWager {
+      width: 750px;
+    }
+}
+
+#postWager, #declineWager, #cancelWager, #reportMatch, #logout, 
+#messageWager, #madeWager, #wagerDetailsView, #acceptWager, #takeWager, 
+#disputeWager, #reportMatch, .messagesPopUps, #madeCCDeposit {
+  display: none;
+}
+
+#no-style-page-wrapper #page-wrapper{
+	margin: 0px !important;
+	padding: 30px;
+}
+textarea {
+  resize: none;
+  width: 100% !important;
+}

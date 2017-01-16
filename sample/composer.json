@@ -1,0 +1,25 @@
+{
+	"name" : "zendframework/skeleton-application",
+	"description" : "Wager Wall Web Application",
+	"keywords" : [
+		"framework",
+		"zf2"
+	],
+	"homepage" : "http://framework.zend.com/",
+	"license" : [
+		"BSD-3-Clause"
+	],
+	"require" : {
+		"aws/aws-sdk-php" : "2.*",
+		"robmorgan/phinx" : "*",
+		"php" : ">=5.3.3",
+		"zendframework/zendservice-amazon" : "2.0.x-dev",
+                "zendframework/zendframework": "~2.4",
+		"pubnub/pubnub": "dev-master",
+		"facebook/php-sdk-v4" : "~5.0",
+                "pusher/pusher-php-server": "^2.4",
+                "zfr/zfr-pusher": "1.*",
+                "speckcommerce/speck-paypal": "dev-master",
+                "paypal/rest-api-sdk-php" : "*"
+	}
+}

@@ -1,0 +1,63 @@
+<!-- begin TOP NAVIGATION -->
+        <nav class="navbar-top" role="navigation">
+
+            <!-- begin BRAND HEADING -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <i class="fa fa-bars"></i> Menu
+                </button>
+                <button id="mobileToggleTalkWall" type="button" class="navbar-toggle">
+                        <i class="fa fa-comment-o"></i>
+                </button>
+                
+                  <a class="mobileWagerBtn btn btn-lg  post_wager_button postWager_open" href="#postWager" >CREATE WAGER</a>
+                
+                <div class="navbar-brand logofont">
+                    <a href="/"><span class="logo_red">THE</span><span class="logo_white">WAGER</span><span class="logo_red">WALL</span></a>
+                </div>
+            </div>
+            <!-- end BRAND HEADING -->
+
+            <div class="nav-top">
+
+                <!-- begin LEFT SIDE WIDGETS -->
+                <ul class="nav navbar-left">
+                    <li class="tooltip-sidebar-toggle">
+                        <a href="#" id="sidebar-toggle" data-toggle="tooltip" data-placement="right" title="Sidebar Toggle">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                    </li>
+                    <!-- You may add more widgets here using <li> -->
+                </ul>
+                <!-- end LEFT SIDE WIDGETS -->
+                
+                <ul class="nav navbar-right">
+                  <li class="top_menu_available_credits">
+                    <span  data-toggle="tooltip" data-placement="bottom" title="Value is approximate based on current bitcoin exchange rates">
+                      <?php //--if($this->userAvailableBtc) echo $this->currencyFormat($this->userAvailableBtc, $this->userCurrency) . ' in Wallet';?>
+                    </span>
+                  </li>
+                  <li>
+                    <!--<a class="btn btn-lg find_game_button" href="<?php //echo $this->url('backoffice', array('action'=>'index', 'controller' => 'index'));?>">View Challenges</a>
+                  </li>-->
+                  <li>
+                    <a class="btn btn-lg  post_wager_button postWager_open desktopWagerBtn" href="#postWager" >CREATE WAGER</a>
+                  </li>
+                  <li>
+                        <a href="#" id="talkWall-toggle" data-toggle="tooltip" data-placement="right" title="TalkWall Toggle">
+                            <i class="fa fa-caret-left" aria-hidden="true"></i>
+                        </a>
+                  </li>
+                  <li>
+                        <a href="#" id="logoutBtn" title="Logout">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                        </a>
+                  </li>
+                  
+                </ul>
+
+            </div>
+            <!-- /.nav-top -->
+        </nav>
+        <!-- /.navbar-top -->
+        <!-- end TOP NAVIGATION -->
